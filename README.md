@@ -5,3 +5,5 @@ Proyecto de CDIO del equipo 7 de 1ºGTI formado por:
 -Arnau Soler Tomás 
 
 -Zaida Pastor Gonzalez :)
+
+-Santiago Marqués Lluch =D
