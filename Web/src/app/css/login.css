@@ -25,7 +25,7 @@
 /*Inicio body*/
 body {
     box-sizing: border-box;
-    background-image: url("../../../images/fondo-login.jpeg");
+    background-image: url("../../../assets/fondo-login.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
