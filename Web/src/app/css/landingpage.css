@@ -80,11 +80,11 @@ nav a {
     padding-top: 1%;
     font-size: 30px;
     font-family: "Montserrat Italic", "Montserrat Regular", "Montserrat", sans-serif;
-  font-style: italic;
+    font-style: italic;
     color: #333333;
 }
 
-.banner-area button{
+.banner-area button {
     width: 266px;
     margin-top: 2%;
     height: 54px;
@@ -139,33 +139,35 @@ nav a {
     padding-bottom: 10%;
 }
 
-.three_columns .logo{
+.three_columns .logo {
     padding: 10px;
 }
 
 @media (max-width: 1210px) {
     nav {
-        visibility: hidden; /*Mas adelante se solucionara el problema del nav */
+        visibility: hidden;
+        /*Mas adelante se solucionara el problema del nav */
     }
+
     .content-area h2 {
         padding-top: 10%;
     }
 
-    h2.top{
+    h2.top {
         padding-top: 0%;
     }
-  }
+}
 
-  @media (max-width: 1135px) {
+@media (max-width: 1135px) {
     .three_columns {
-        column-count: 1; 
+        column-count: 1;
     }
-    
-    .three_columns h2{
+
+    .three_columns h2 {
         padding: 0px;
     }
 
-    #top{
+    #top {
         padding-top: 10%;
     }
-  }
+}
