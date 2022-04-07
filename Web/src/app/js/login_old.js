@@ -7,7 +7,7 @@ function enviarLogin(event){
     //region ---NombreYContraseñaUsuario_URL---
     let email=document.getElementById( "email-mobile").value
     let passEmail=document.getElementById("contraseña-mobile").value
-    let url= "../api/v0.0/" + email + "-" + passEmail + ".json"
+    let url= "api/v0.0/" + email + "-" + passEmail + ".json"
     console.log(url)
     //endregion
 
@@ -17,7 +17,7 @@ function enviarLogin(event){
         return respuesta.json() //Una vez recibida la respuesta, la convierto a .json
     }).then(function(datos) {
         console.log(datos.nombre)
-        location.href="Form_env.html"
+        location.href="app/Form_env.html"
     }).catch(function(){
         document.getElementById("error-mobile").style.visibility="visible"
         //Si el tamaño de ventana es superior a 600px de ancho, que es el mínimo te los iPhone 12 Pro
