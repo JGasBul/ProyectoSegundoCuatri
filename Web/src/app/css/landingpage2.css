@@ -5,6 +5,66 @@
     align-items: center;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.dropbtn {
+    margin: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.login {
+    width: 100px;
+    height: 40px;
+    margin-right: 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 5px none #797979;
+    background-color: rgba(144, 12, 63, 0.99);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.48);
+    font-family: "Montserrat Bold", "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    line-height: normal;
+}
+
 p {
     background-color: rgba(255, 255, 255, 0);
     box-sizing: border-box;
@@ -93,6 +153,26 @@ section {
     align-content: space-between;
 }
 
+footer {
+    /*Flex*/
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+}
+
+footer a {
+    padding: 2px 2px 2px 2px;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    font-family: "Arial Normal", "Arial", sans-serif;
+    color: #000000;
+    text-align: left;
+    line-height: normal;
+    text-decoration: none;
+    font-size: 10px;
+}
+
 .row {
     flex-flow: row nowrap;
 }
@@ -115,6 +195,7 @@ section {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .button button {
@@ -147,6 +228,11 @@ section {
 
 .icon_small {
     width: 40%;
+}
+
+.icon_footer {
+    width: 75%;
+    height: auto;
 }
 
 .grey {
