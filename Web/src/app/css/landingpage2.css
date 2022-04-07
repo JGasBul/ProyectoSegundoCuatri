@@ -2,98 +2,49 @@
     margin: 0;
     padding: 0;
     font-family: "Montserrat Medium", "Montserrat Regular", "Montserrat", sans-serif;
-    box-sizing: border-box;
+    align-items: center;
 }
 
 p {
     background-color: rgba(255, 255, 255, 0);
-    font-family: "Montserrat Medium", "Montserrat Regular", "Montserrat", sans-serif;
+    box-sizing: border-box;
+    font-family: "Montserrat Medium", "Montserrat", sans-serif;
     font-weight: 500;
-    color: #333333;
-    text-align: left;
-    line-height: normal;
-    font-size: 12px;
-}
-
-h2 {
-    font-family: "Montserrat Light", "Montserrat Regular", "Montserrat", sans-serif;
-    font-weight: 300;
-    color: #000000;
-    text-align: center;
-    line-height: normal;
-    font-size: 36px;
-}
-
-h3 {
-    font-family: "Montserrat Italic", "Montserrat Regular", "Montserrat", sans-serif;
-    font-style: italic;
     color: #333333;
     text-align: left;
     line-height: normal;
     font-size: 14px;
 }
 
-body {
+.titulo {
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    font-family: "Montserrat Light", "Montserrat", sans-serif;
+    font-weight: 300;
+    color: #000000;
     text-align: center;
+    line-height: normal;
+    font-size: 48px;
 }
 
-.col-1 {
-    width: 8.33%;
+.subtitulo {
+    font-family: "Montserrat Italic", "Montserrat Regular", "Montserrat", sans-serif;
+    font-style: italic;
+    color: #333333;
+    text-align: center;
+    line-height: normal;
+    font-size: 16px;
 }
 
-.col-2 {
-    width: 16.66%;
-}
-
-.col-3 {
-    width: 25%;
-}
-
-.col-4 {
-    width: 33.33%;
-}
-
-.col-5 {
-    width: 41.66%;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-7 {
-    width: 58.33%;
-}
-
-.col-8 {
-    width: 66.66%;
-}
-
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.33%;
-}
-
-.col-11 {
-    width: 91.66%;
-}
-
-.col-12 {
-    width: 100%;
-}
-
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-    border: 1px solid red;
-}
-
-.img_responsive {
-    width: 100%;
-    height: auto;
+.titulo_seccion {
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    font-family: "Montserrat Bold", "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #333333;
+    text-align: center;
+    line-height: normal;
+    font-size: 20px;
 }
 
 .header-area {
@@ -102,11 +53,12 @@ body {
     left: 0;
     right: 0;
     position: fixed;
+    /*Flex*/
+    display: flex;
+    justify-content: space-between;
 }
 
 .banner-area {
-    padding-top: 150px;
-    border: 1px solid red;
     /*Hacer una vista de pantalla completa*/
     min-height: 100vh;
     /*Añadir fondo de pagina*/
@@ -115,6 +67,54 @@ body {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+    /*Flex*/
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.content-area {
+    padding: 0;
+    padding-bottom: 15px;
+    /*Flex*/
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+section {
+    width: 100%;
+    /*Flex*/
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.row {
+    flex-flow: row nowrap;
+}
+
+.text-area {
+    padding: 15px;
+}
+
+.wrapper_row {
+    padding: 15px;
+    /*Flex*/
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.wrapper_col {
+    padding: 15px;
+    /*Flex*/
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 }
 
 .button button {
@@ -133,21 +133,22 @@ body {
     line-height: normal;
 }
 
-.content-area {
-    border: 1px solid red;
-    padding: 0;
-    padding-bottom: 15px;
+.img_responsive {
+    width: 100%;
+    height: auto;
+}
+
+.icon_responsive {
+    display: block;
+    margin: auto;
+    width: 30%;
+    height: auto;
+}
+
+.icon_small {
+    width: 40%;
 }
 
 .grey {
     background-color: rgba(170, 170, 170, 0.16);
-}
-
-.footer-area {
-    border: 1px solid red;
-}
-
-article {
-    border: 1px solid red;
-    padding-top: 15px;
 }
