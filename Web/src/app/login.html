@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="es" style="min-height: 100%">
+
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="css/login.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/login.css" type="text/css">
 </head>
+
 <body>
-<!--Inicio Mobile First-->
-<div class="mobile-first">
-    <!--Inicio Atrás-->
-    <section class="volver">
-        <a href="LandingPage.html" style="text-decoration: none">
-            <img src="../../assets/volver.svg" alt="volver">
-            <label style="color: #ffffff">Volver</label>
-        </a>
-    </section>
-    <!--Fin Atrás-->
-    <h1 class="titulo-login">Usuario</h1>
-    <!--Imagen de Cuenta-->
-    <img src="../../assets/account.svg" alt="icono de Cuenta02" class="account">
-    <!--Creamos un contenedor que contendrá el formulario de login y el cuadro de error-->
-    <!--Inicio Contenedor-Login-->
-    <div class="contenedor-login">
-        <!--Inicio del formulario-->
-        <form onsubmit="enviarLogin(event)">
-            <!--Inicio Email-->
-            <div class="contenido-email">
-                <img src="../../assets/icon01.svg" alt="icono de Email" class="email-icon">
-                <div class="contenido-email-interior">
-                    <label for="email-mobile">Email:</label>
-                    <input id="email-mobile" name="email" placeholder="Ponga su email" type="email" required>
-                </div>
-            </div>
-            <!--Fin Email-->
-            <!--Inicio Contraseña-->
-            <div class="contenido-contraseña">
-                <img src="../../assets/icon02.svg" alt="icono de candado" class="lock-icon">
-                <div class="contenido-contraseña-interior">
-                    <label for="contraseña-mobile">Contraseña:</label>
-                    <input id="contraseña-mobile" name="contraseña" placeholder="Ponga su contraseña" type="password" required>
-                </div>
-                <!--Inicio MostrarOcultar Contraseña-->
-                <section class="Mostrar-Ocultar-Contraseña" onclick="MostrarOcultarPassword(this)">
-                    <div class="ojo">
-                        <img class="ojo-cerrado" src="../../assets/ojo_abierto_desactivado.svg" alt="icono ocultar contraseña">
+    <!--Inicio Mobile First-->
+    <div class="mobile-first">
+        <!--Inicio Atrás-->
+        <section class="volver">
+            <a href="../index.html" style="text-decoration: none">
+                <img src="../assets/volver.svg" alt="volver">
+                <label style="color: #ffffff">Volver</label>
+            </a>
+        </section>
+        <!--Fin Atrás-->
+        <h1 class="titulo-login">Usuario</h1>
+        <!--Imagen de Cuenta-->
+        <img src="../assets/account.svg" alt="icono de Cuenta02" class="account">
+        <!--Creamos un contenedor que contendrá el formulario de login y el cuadro de error-->
+        <!--Inicio Contenedor-Login-->
+        <div class="contenedor-login">
+            <!--Inicio del formulario-->
+            <form onsubmit="enviarLogin(event)">
+                <!--Inicio Email-->
+                <div class="contenido-email">
+                    <img src="../assets/icon01.svg" alt="icono de Email" class="email-icon">
+                    <div class="contenido-email-interior">
+                        <label for="email-mobile">Email:</label>
+                        <input id="email-mobile" name="email" placeholder="Ponga su email" type="email" required>
                     </div>
-                </section>
-                <!--Fin MostrarOcultar Contraseña-->
+                </div>
+                <!--Fin Email-->
+                <!--Inicio Contraseña-->
+                <div class="contenido-contraseña">
+                    <img src="../assets/icon02.svg" alt="icono de candado" class="lock-icon">
+                    <div class="contenido-contraseña-interior">
+                        <label for="contraseña-mobile">Contraseña:</label>
+                        <input id="contraseña-mobile" name="contraseña" placeholder="Ponga su contraseña" type="password" required>
+                    </div>
+                    <!--Inicio MostrarOcultar Contraseña-->
+                    <section class="Mostrar-Ocultar-Contraseña" onclick="MostrarOcultarPassword(this)">
+                        <div class="ojo">
+                            <img class="ojo-cerrado" src="../assets/ojo_abierto_desactivado.svg" alt="icono ocultar contraseña">
+                        </div>
+                    </section>
+                    <!--Fin MostrarOcultar Contraseña-->
+                </div>
+                <!--Fin Contraseña-->
+                <input type="submit" value="Login">
+            </form>
+            <!--Fin del formulario-->
+            <!--Inicio Contenedor-Error-->
+            <!--Si los datos dan error, se mostrará dentro del contenedor que los datos son incorrectos-->
+            <div id="error-mobile">
+                Datos incorrectos
             </div>
-            <!--Fin Contraseña-->
-            <input type="submit" value="Login">
-        </form>
-        <!--Fin del formulario-->
-        <!--Inicio Contenedor-Error-->
-        <!--Si los datos dan error, se mostrará dentro del contenedor que los datos son incorrectos-->
-        <div id="error-mobile">
-            Datos incorrectos
+            <!--Fin Contenedor-Error-->
         </div>
-        <!--Fin Contenedor-Error-->
+        <!--Fin Contenedor-Login-->
     </div>
-    <!--Fin Contenedor-Login-->
-</div>
-<!--Fin Mobile First-->
-<script src="js/login.js"> </script>
+    <!--Fin Mobile First-->
+    <script src="js/login.js">
+    </script>
 </body>
+
 </html>
