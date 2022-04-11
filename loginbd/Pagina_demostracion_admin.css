@@ -1,0 +1,160 @@
+#contenedor{
+    height: 720px;
+    margin: auto auto;    
+    
+ }
+#cabecera_contenedor{
+width: auto;
+    height: 70px;
+    opacity: 0.78;
+    padding: 2px 2px 2px 2px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px 0px rgba(121, 121, 121, 0.35); 
+    display: flex;
+    
+}
+#area_logo{
+    justify-content:center;   
+    width: auto;
+    height: auto;
+}
+#area_menu{
+    width: 85%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+ #imagen_logo_GTI{
+     width: 160px;
+     height: 70px;
+     box-sizing: border-box;
+ }
+ #icono_menu{
+    width: 40px;
+    height: 40%;
+    padding: 2px;
+    transform: translate(-10px, 20px); 
+ }
+ .titulo-usuario{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    transform: translate(0px,-10px);
+}
+#barra_busqueda{
+    height: 50px;
+    width: 100%;
+    transform: translate(0px, -25px);
+    padding: 2px 2px 2px 48px;
+    border-radius: 4px;
+    border-bottom: 31px;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+    color: #999999;
+    text-align: left;
+    letter-spacing: 0.4px;
+}
+#icono_busqueda{
+    transform: translate(10px, -59px);
+}
+.icono-abajo{
+    justify-content: center;
+    display: flex;
+    transform: translate(0px,-60px);
+}
+#icono_abajo{
+    height: 25px;
+}
+#titulo_busqueda{
+    font-size: 15px;
+    text-align: center;
+    transform: translate(0px,-50px);
+}
+.contenedor-personal{
+    display: flex;
+    justify-content: center;
+    height:130px;
+    width: 100%;
+    transform: translate(0px, -70px);
+    background-color: #f2f2f2;
+    padding: 5px;
+    margin: 20px 0px;
+    
+}
+.foto-personal{
+    padding: 0px;   
+    transform: translate(-80px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+    
+}
+.foto-perfil{
+    
+    height: 70%;
+}
+.area-datos-personal{
+    align-items:stretch ;
+    transform: translate(10px ,0px);
+    width: 250px;
+}
+.nombre-personal{
+    transform: translate(0px ,-20px);
+    height: 50px;
+}
+.dato-personal{
+    
+    transform: translate(30px, -30px);
+    
+}
+.dato{
+    display: flex;
+    align-items: baseline;
+    font-size: 12px;
+    /* border: 1px solid yellow; */
+}
+.ficha{
+    display: flex;
+    justify-content: center;
+    transform: translate(30px, 70px);
+    height: 23px;
+}
+.boton-ficha{
+    color: white;
+    background-color: #900c3f;
+    font-size: 90%;
+    padding: 2px;
+}
+#pie_pagina{
+    display: flex;
+    justify-content: space-around;
+    transform: translate(0%, -70px);
+    
+}
+#area_iconos_footer{
+    display: flex;
+    
+}
+.icono-footer{
+    display: flex;
+    padding: 0px 10px;
+    align-items: center;
+    width: 30px;
+    
+    
+}
+#contenedor_informacion_footer{
+    display: flex;
+    font-size: 13px;
+    padding: 2px;
+}
+
+.informacion-footer{
+    align-content: space-around;
+    padding: 1px;
+    
+    
+}

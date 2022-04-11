@@ -1,0 +1,97 @@
+#contenedor{
+    height: 720px;
+    margin: auto auto;  
+    border: 1px solid red;  
+ }
+#cabecera_contenedor{
+width: auto;
+    height: 70px;
+    opacity: 0.78;
+    padding: 2px 2px 2px 2px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px 0px rgba(121, 121, 121, 0.35); 
+    display: flex;
+    
+}
+#area_logo{
+    justify-content:center;   
+    width: auto;
+    height: auto;
+}
+#area_menu{
+    width: 85%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+ #imagen_logo_GTI{
+     width: 160px;
+     height: 70px;
+     box-sizing: border-box;
+ }
+ #icono_menu{
+    width: 40px;
+    height: 40%;
+    padding: 2px;
+    transform: translate(-10px, 20px); 
+ }
+ #background{
+     position: absolute;
+     height: 100%;
+     width: 100%;
+ }
+ .campo{
+    display: flex;
+    justify-content: center;
+    transform: translate(0px, 0px);
+    height: 100px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.43);
+    border: 1px solid;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: normal;
+    align-items: center;
+    padding: 40px;
+    margin: 5px;
+    
+}
+.titulo-campo{
+    display: flex;
+    justify-content: center;
+    transform: translate(0px, 0px);
+    height: 70px;
+    width: 100%;
+    text-align: center;
+    line-height: normal;
+    align-items: center;
+}
+.boton-campo{
+    color: black;
+    font-size: 300%;
+    padding: 2px;
+    
+}
+.atras{
+    display: flex;
+    transform: translate(0px, 0px);
+    text-align: center;
+    width: 100px;
+    border-radius: 10px;
+    border: 1px solid;
+    background-color: rgba(133, 133, 133, 0.35);
+    line-height: normal;
+    align-items: center;
+    padding: 10px;
+    margin: 40px 5px;
+    
+}
+.boton-atras{
+    color: black;
+    font-size: 150%;
+    padding: 2px;
+    
+}
