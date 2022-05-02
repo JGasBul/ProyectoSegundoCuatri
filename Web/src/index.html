@@ -9,9 +9,12 @@
 </head>
 
 <body>
-<header class="header-area">
+
+<!-- Header -->
+<div id="scroll_arriba"></div>
+<header class="header-area" >
     <div class="logo">
-        <a href="#"><img src="./assets/logo.svg" alt="logo_empresa" width="150"/></a>
+        <a href=""><img src="./assets/logo.svg" alt="logo_empresa" width="150"/></a>
     </div>
     <nav>
         <a href="./app/login.html" class="login" onmouseover="opacityless(this)"
@@ -26,7 +29,7 @@
         </div>
     </nav>
 </header>
-
+<!-- Fin header -->
 
 <div class="banner-area">
     <div class="titulo">
@@ -36,13 +39,19 @@
         LLEVA LA AGRICULTURA AL SIGUIENTE NIVEL CON NUESTRAS SONDAS
     </div>
     <div class="button">
-        <button name="Contactanos" onmouseover="opacityless(this)" onmouseout="opacitynormal(this)">CONTÁCTANOS</button>
-    </div>
-    <div class="flecha abajo">
-        <img src="./assets/flecha.svg" alt="Flecha">
+        <a href="#">
+            <button name="Contactanos" onmouseover="opacityless(this)" onmouseout="opacitynormal(this)">CONTÁCTANOS</button>
+        </a>
     </div>
 
+    <div class="flecha abajo" >
+        <a href="#Tp_flecha">
+        <img src="./assets/flecha.svg" alt="Flecha">
+        </a>
+        <div id="Tp_flecha"></div>
+    </div>
 </div>
+
 <div class="separador">
 </div>
 
@@ -62,7 +71,7 @@
                     Gracias a nuestra web podrás ver los parámetros de tu campo en tiempo real, recibir alertas en el
                     móvil...
                     <br>
-                    <br>¡Y muchas más cosas!</br>
+                    <br>¡Y muchas más cosas!
                 </p>
 
             </div>
@@ -77,8 +86,8 @@
     <div>
         <div class="titulo_seccion">Mediciones en tiempo real</div>
     </div>
-    <div class="wrapper_row white">
 
+    <div class="wrapper_row white">
         <div>
             <p class="text-area2">
                 Máxima información sobre los cultivos: nuestras sondas registran las condiciones de las plantas cada
@@ -88,38 +97,60 @@
 
         </div>
 
-        <div class="fila icons">
-            <div class=" columna"><img src="./assets/bombilla.svg"/> </div>
-            <div class="columna"><img src="./assets/temp.svg"/></div>
-        </div>
-            <div class="fila">
-
+        <div class="container_icons arriba">
+            <div class="row_icons">
+                <div class="margin-temp"><img src="./assets/bombilla.svg" alt="Iluminación"></div>
+                <div class="end"><img src="./assets/temp.svg" alt="Temperatura"></div>
             </div>
+            <div class="center"><img src="./assets/Icono_center.svg" alt="Conexión"></div>
+            <div class="row_icons">
+                <div class="margin-gota" ><img src="./assets/campana.svg" alt="Alarma"></div>
+                <div class=""><img src="./assets/gota.svg" alt=Humedad"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <div class="fila">
-            <div class="columna"><img src="./assets/campana.svg"></div>
-                <div class="columna"><img src="./assets/gota.svg"></div>
+<div class="separador">
+</div>
 
+<section class="container_slider">
+
+    <div>
+        <div class="titulo_seccion"> Descubre los beneficios</div>
     </div>
 
-
+    <div class="slider">
+        <ul>
+        <li> <img src="./assets/SliderStep1.png" alt="State1"></li>
+        <li> <img src="./assets/SliderStep2.png" alt="State1"></li>
+        <li> <img src="./assets/SliderStep3.png" alt="State1"></li>
+        </ul>
+    </div>
 
 </section>
 
-<section class="row">
+
+<div class="separador">
+</div>
+
+<section class="row smallgrey">
     <div class="wrapper_col">
         <div>
             <div class="titulo_seccion">Confianza</div>
         </div>
         <div>
-            <img class="icon_responsive icon_small" src="./assets/hands.svg" alt="hands">
+            <img class="icon_responsive" src="./assets/hands.svg" alt="hands">
         </div>
     </div>
     <div class="wrapper_col">
         <p>Damos una vital importancia a la confianza con nuestros clientes</p>
     </div>
 </section>
-<section class="row grey">
+
+
+
+<section class="row smallwhite">
     <div class="wrapper_col">
         <p>Nuestro trabajo consiste en una constante evolución y aprendizaje</p>
     </div>
@@ -128,35 +159,48 @@
             <div class="titulo_seccion">Perseverancia</div>
         </div>
         <div>
-            <img class="icon_responsive" src="./assets/book.svg" alt="hands">
+            <img class="icon_responsive icon_margin"  src="./assets/book.svg" alt="hands">
         </div>
     </div>
 </section>
-<section class="row">
+
+
+<section class="row smallgrey">
     <div class="wrapper_col">
         <div>
             <div class="titulo_seccion">Comprensión</div>
         </div>
         <div>
-            <img class="icon_responsive" src="./assets/calendar.svg" alt="hands">
+            <img class="icon_responsive icon_margin" src="./assets/calendar.svg" alt="hands">
         </div>
     </div>
     <div class="wrapper_col">
-        <p>
-            Nos adaptamos a su horario sin compromiso</p>
+        <p> Nos adaptamos a su horario sin compromiso</p>
     </div>
+
+    <div class="flecha_abajo" >
+        <a href="#scroll_arriba" >
+        <img src="./assets/flecha.svg" alt="Flecha">
+        </a>
+    </div>
+
 </section>
+
+
+
+<div class="big_separador">
 </div>
-<footer class="row" div>
-    <div class="wrapper_row" div>
+
+<footer class="row " >
+    <div class="wrapper_row" >
         <div>
-            <img class=" icon_footer " src="./assets/trash.svg " alt="hands ">
+            <img class=" icon_footer " src="./assets/trash.svg " alt="Reciclar ">
         </div>
         <div>
-            <img class="icon_footer " src="./assets/mail.svg " alt="hands ">
+            <img class="icon_footer " src="./assets/mail.svg " alt="Correo ">
         </div>
         <div>
-            <img class="icon_footer " src="./assets/chat.svg " alt="hands ">
+            <img class="icon_footer " src="./assets/chat.svg " alt="Mensajeria ">
         </div>
     </div>
     <div>

@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html{
+    scroll-behavior: smooth;
+}
 
 * {
     margin: 0;
@@ -6,7 +9,7 @@
     font-family: "Montserrat Medium", "Montserrat Regular", "Montserrat", sans-serif;
     align-items: center;
 }
-
+/*Header*/
 nav {
     display: flex;
     align-items: center;
@@ -17,6 +20,7 @@ nav {
 .opacity{
     opacity: 60%;
 }
+
 .dropbtn {
     margin: 16px;
     border: none;
@@ -71,21 +75,28 @@ nav {
     line-height: normal;
 }
 
+/*Tipografia*/
 p {
     background-color: rgba(255, 255, 255, 0);
     box-sizing: border-box;
     font-family: "Montserrat Medium", "Montserrat", sans-serif;
     font-weight: 500;
     color: #333333;
-    text-align: left;
+    text-align: center;
     line-height: normal;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .titulo {
-    width: 383px;
+    min-width: 383px;
+    width: 100%;
+    max-width: 600px;
+    max-font-size: 400%;
     height: 274px;
     margin-top: 165px;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     background-color: rgba(255, 255, 255, 0);
     box-sizing: border-box;
     font-family: "Montserrat Light", "Montserrat", sans-serif;
@@ -93,7 +104,7 @@ p {
     color: #000000;
     text-align: center;
     line-height: normal;
-    font-size: 48px;
+    font-size: 300%;
 
 }
 
@@ -109,27 +120,37 @@ p {
     font-size: 17px;
 }
 
-.abajo{
-    align-items: flex-end;
-}
-
+/*Flexbox*/
 .center{
     align-self: center;
+    margin-right: 30px;
+    padding-left: 25px;
 }
+
 .arriba{
-    align-self: flex-start;
+    align-items: flex-start;
 }
+
+.end{
+    align-self: flex-end;
+}
+
+/*Iconos flecha*/
 .flecha {
     width: auto;
     height: 100px;
     padding-top: 20px;
     margin: 10px auto;
-    background-color: gray;
     display: flex;
 }
 
+.flecha_abajo{
+    transform: rotate(180deg);
+    margin-bottom: -90px;
+}
+
+/*Separadores*/
 .separador{
-    position: relative;
     align-self: center;
     width: 50%;
     margin-left: 25%;
@@ -139,12 +160,13 @@ p {
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.69);
 }
-.separador2{
+
+.big_separador{
     align-self: center;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: -15px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+
     height: 5px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.69);
@@ -159,6 +181,7 @@ p {
     color: #333333;
     text-align: center;
     line-height: normal;
+
     font-size: 25px;
 }
 
@@ -170,6 +193,7 @@ p {
     position: fixed;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-shadow:0 0 10px grey ;
     /*Flex*/
     display: flex;
     justify-content: space-between;
@@ -194,7 +218,7 @@ p {
 .content-area {
     padding: 0;
     margin-bottom: -3px;
-    border: 1px solid gold;
+    border: 1px solid white;
     /*Flex*/
     display: flex;
     flex-flow: column nowrap;
@@ -238,49 +262,34 @@ footer a {
 .text-area1 {
     margin-top:5px;
     padding: 10px;
-
-    border: 1px solid black;
     width: 100%;
     height: 100%;
     min-height: 213px;
     font-size: 18px;
-
     max-height: 250px;
-
 }
+
 .text-area2{
     margin-right: 7%;
-    border: 1px solid black;
     width: 100%;
     height: 213px;
     min-height: 213px;
     font-size: 18px;
-    padding-top: 18px;
+    padding:10px;
     max-height: 214px;
 }
 
-.icons{
-    width: 100%;
-    height: 100%;
-    margin-top: 2px;
-    max-height: 216px;
-    min-height: 150px;
-    border: 1px solid red;
+
+.sep{
+    padding-right: 40px;
 }
-.flex-item{
-    display: inherit;
-    width: 50px;
-    background-color: lightgrey;
-    margin: 5px;
-}
-.fila1{
-    border: 1px solid aqua;
-    height: 50px;
-    align-content: space-around;
-}
+
 .temp{
+    position: fixed;
     background-color:gray;
 }
+
+
 .columna {
     float: left;
     width: 50%;
@@ -296,12 +305,11 @@ footer a {
 
 .wrapper_row {
     padding-top: 2px;
-    min-height: 213px;
+    min-height: 100px;
     /*Flex*/
     display: flex;
     flex-direction: row;
     justify-content: center;
-
 }
 
 .wrapper_col {
@@ -312,6 +320,7 @@ footer a {
     justify-content: center;
     align-items: flex-start;
 }
+
 
 .button button{
     font-size: 20px;
@@ -332,6 +341,7 @@ footer a {
 }
 
 .img_responsive {
+    padding-bottom: 4px;
     padding-left:-15px;
     width: 100%;
     height: 100%;
@@ -339,18 +349,25 @@ footer a {
     min-width: 215px;
     max-height: 215px;
     min-height: 216px;
-    border: 1px solid red;
 }
 
+/*Iconos*/
 .icon_responsive {
     display: block;
     margin: auto;
-    width: 30%;
+    width: 40%;
     height: auto;
 }
 
-.icon_small {
-    width: 40%;
+.icon_margin{
+    margin-right: 10px;
+}
+
+.margin-temp{
+    margin-bottom: 350%;
+}
+.margin-gota{
+    margin-bottom: 400%;
 }
 
 .icon_footer {
@@ -358,16 +375,106 @@ footer a {
     height: auto;
 }
 
+.container_icons{
+    width: 100%;
+    max-width: 215px;
+    height: 100%;
+    max-height: 216px;
+    min-height: 150px;
+    margin-top: 2px;
+    display: flex;
+}
+
+.icons{
+    width: 100%;
+    padding-left: 100%;
+    flex-direction: row;
+    justify-items: center;
+}
+
+.row_icons{
+    height: 100%;
+
+}
+
+/*Colores*/
 .grey {
     width: auto;
     margin-top: -2px;
-    border: 1px solid red;
+
     height: 300px;
     background-color: rgba(170, 170, 170, 0.16);
 }
+.smallgrey{
+    width: auto;
+    margin-top: -2px;
+    height: 150px;
+    background-color: rgba(170, 170, 170, 0.16);
+
+}
+
+.smallwhite{
+    width: auto;
+    margin-top: -2px;
+    height: 150px;
+}
+
+.color_footer{
+    width: 100%;
+   border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+   background-color:lightgrey;
+
+}
+
 .white {
     width: 100%;
-    border: 1px solid darkblue;
     height: 215px;
+
+}
+
+/*Slider*/
+.container_slider {
+    width: 100%;
+    height: 300px;
+
+}
+.slider{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.slider ul{
+    margin-top: 35px;
+    display: flex;
+    padding: 0;
+    animation: cambio 20s infinite alternate linear ;
+
+}
+
+.slider li{
+    width: 100%;
+    list-style: none;
+    padding-bottom: 100px;
+}
+
+.slider img{
+   width: 500px;
+    margin-bottom: 20px;
+    padding-bottom: 100px;
+    object-fit: fill;
+}
+
+@keyframes cambio {
+    0%{margin-left:0;}
+    30%{margin-left: 0}
+
+    35%{margin-left: -105%}
+    70%{margin-left: -105%}
+
+    75%{margin-left: -210%}
+    100%{margin-left: -210%}
+
+
 
 }
