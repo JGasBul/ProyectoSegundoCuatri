@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio mobile-first*/
+
+.mobile-first {
+    padding: 1em;
+    margin: 2em auto;
+    max-width: 750px;
+}
+
+
+/*mobile-first*/
+
+
+/*Para un dispositivo cuya anchura minima sea 600px*/
+
+@media (min-width: 600px) {
+    .mobile-first [class="contenedor-login"] {
+        display: flex;
+        justify-content: space-between;
+    }
+    .mobile-first [class="form"] {
+        width: 30%;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {}
+
+
+/*Fin mobile-first*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio body*/
+
+body {
+    box-sizing: border-box;
+    background-image: url("../assets/fondo-login.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+/*Fin body*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio Atrás*/
+
+.volver {
+    /*Inicio flexbox*/
+    display: flex;
+    justify-content: flex-start;
+    /*Se situa a la izquierda*/
+    flex-wrap: wrap;
+    /*Fin flexbox*/
+    /*Inicio tamaño*/
+    padding: 2px 2px 2px 2px;
+    margin: 2px 0;
+    width: 90px;
+    /*Fin tamaño*/
+    /*Inicio Borde*/
+    border-radius: 5px;
+    border: 1px solid #797979;
+    background-color: #900c3f;
+    box-sizing: border-box;
+    /*Fin Borde*/
+    /*Inicio Texto*/
+    font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    /*Fin Texto*/
+    /*Inicio hipervinculo*/
+    color: white;
+    /*Inicio hipervinculo*/
+}
+
+
+/*Fin Atrás*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio titulo del login*/
+
+.titulo-login {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 28px;
+    font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
+    color: #333333;
+}
+
+
+/*Fin titulo del login*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio clase account*/
+
+.account {
+    /*Tamaño*/
+    width: 80px;
+    height: 79px;
+    /*Fondo*/
+    background: white;
+    border-radius: 90px;
+    /*Alineación*/
+    margin: auto 40%;
+    justify-content: center;
+}
+
+
+/*Fin clase account*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio form*/
+
+form {
+    display: flex;
+    /*Dispone de forma automática todos los elementos hijos para que vayan fluidos*/
+    flex-direction: column;
+    /*Aparece en forma de columna, ergo uno encima del otro*/
+}
+
+
+/*Fin form*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio id="contenedor-login"*/
+
+div [class=contenedor-login] {
+    margin: 0 auto;
+    /*La primera medida, hace referencia a la distancia por arriba y por abajo; y la segunda, por derecha e izquierda */
+    justify-content: center;
+    background-color: white;
+    padding: 20px 20px;
+}
+
+
+/*Fin id="contenedor-login"*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio todos los input*/
+
+input {
+    margin-bottom: 10px;
+    /*Margen por abajo de 10px para los elementos de tipo input*/
+    padding: 6px;
+}
+
+
+/*Fin todos los input*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio contenido del email y contenido de contraseña*/
+
+.contenido-email {
+    display: flex;
+    flex-direction: row;
+}
+
+.contenido-email-interior {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-contraseña {
+    display: flex;
+    flex-direction: row;
+    margin-top: 45px;
+}
+
+.contenido-contraseña-interior {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Fin contenido del email y contenido de contraseña*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio input de Email y Contraseña*/
+
+input[type="email-"],
+input[type="contraseña-"] {
+    border: black 1px solid;
+    width: 200px;
+    /*Limita los inputs y los elementos del form a una anchura de 200px*/
+}
+
+input[type="email-"]:focus,
+
+/*El pseudoelemento de focus nos permite que, si hacemos click fuera del campo,*/
+
+input[type="contraseña-"]:focus {
+    /*este se desseleccionará*/
+}
+
+.email-mobile,
+.contraseña-mobile {
+    /*Inicio Tamaño, Color, Fuente*/
+    width: 33px;
+    height: 15px;
+    font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
+    color: #333333;
+    /*Fin Tamaño, Color, Fuente*/
+    text-align: left;
+    line-height: normal;
+}
+
+
+/*Fin input de Email y Contraseña*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio Iconos de email y lock*/
+
+.email-icon {
+    width: 43px;
+    height: 50px;
+    padding: 2px 2px 2px 2px;
+    box-sizing: border-box;
+}
+
+.lock-icon {
+    width: 41px;
+    height: 50px;
+    padding: 2px 2px 2px 2px;
+    box-sizing: border-box;
+}
+
+
+/*Fin Iconos de email y lock*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio clase Mostrar-Ocultar-Contraseña*/
+
+.ojo {
+    width: 34px;
+    height: 25px;
+}
+
+
+/*Fin clase Mostrar-Ocultar-Contraseña*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio Enviar */
+
+input[type="submit"] {
+    width: 140px;
+    height: 40px;
+    padding: 2px 2px 2px 2px;
+    border-radius: 5px;
+    background-color: #900c3f;
+    font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 20px;
+    align-self: center;
+}
+
+
+/*Fin Enviar*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Inicio class="error"*/
+
+#error-mobile,
+#error-desktop {
+    /*Inicio Tamaño-Color*/
+    background-color: rgba(170, 170, 170, 0.16);
+    height: auto;
+    color: black;
+    /*Fin Tamaño-Color*/
+    /*Inicio Alineacion*/
+    text-align: center;
+    font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    /*Inicio Alineacion*/
+    visibility: hidden;
+    /*Estado del objeto*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/*Fin class="error"*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
