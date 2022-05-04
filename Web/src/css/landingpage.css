@@ -87,16 +87,13 @@ p {
     font-size: 18px;
 }
 
+
 .titulo {
-    min-width: 383px;
-    width: 100%;
-    max-width: 600px;
-    max-font-size: 400%;
-    height: 274px;
-    margin-top: 165px;
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
+
+    margin-top: 140px;
+    padding-top: -5%;
+    padding-left: 10%;
+    padding-right: 10%;
     background-color: rgba(255, 255, 255, 0);
     box-sizing: border-box;
     font-family: "Montserrat Light", "Montserrat", sans-serif;
@@ -104,20 +101,22 @@ p {
     color: #000000;
     text-align: center;
     line-height: normal;
-    font-size: 300%;
+    font-size: 10vmin;
+    
 
 }
 
 .subtitulo {
     margin-top:80px;
-    width: 336px;
-    height: 63px;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 3%;
     font-family: "Montserrat Italic", "Montserrat Regular", "Montserrat", sans-serif;
     font-style: italic;
     color: #333333;
     text-align: center;
     line-height: normal;
-    font-size: 17px;
+    font-size: 3vmin;
 }
 
 /*Flexbox*/
@@ -181,7 +180,6 @@ p {
     color: #333333;
     text-align: center;
     line-height: normal;
-
     font-size: 25px;
 }
 
@@ -190,7 +188,7 @@ p {
     width: 100%;
     left: 0;
     right: 0;
-    position: fixed;
+    position: absolute;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     box-shadow:0 0 10px grey ;
@@ -202,9 +200,11 @@ p {
 .banner-area {
     /*Hacer una vista de pantalla completa*/
     min-height: 100vh;
+    
     /*Añadir fondo de pagina*/
     background-image: url("../assets/newfondo.jpg");
-    -webkit-background-size: cover;
+
+    -webkit-background-size: contain;
     background-size: cover;
     background-position: center center;
 
