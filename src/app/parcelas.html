@@ -113,6 +113,26 @@
                 let id = parcela.parcela || parcela.id;
                 let consulta = await fetch("http://localhost/src/api/parcela.php/vertices?parcela=" + id);
                 let vertices = await consulta.json();
+                var sonda1 = new google.maps.Marker({
+                    position: vertices[0],
+                    draggable: false
+                });
+                var sonda2 = new google.maps.Marker({
+                    position: vertices[1],
+                    draggable: false
+                });
+                var sonda3 = new google.maps.Marker({
+                    position: vertices[2],
+                    draggable: false
+                });
+                var sonda4 = new google.maps.Marker({
+                    position: vertices[3],
+                    draggable: false
+                });
+                sonda1.setMap(map);
+                sonda2.setMap(map);
+                sonda3.setMap(map);
+                sonda4.setMap(map);
                 parcela.polygon = new google.maps.Polygon({
                     paths: vertices,
                     strokeColor: "#" + parcela.color,

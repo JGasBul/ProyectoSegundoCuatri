@@ -12,11 +12,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
--- Volcando estructura de base de datos para gti_equipo7
-CREATE DATABASE IF NOT EXISTS `gti_equipo7` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
-USE `gti_equipo7`;
-
 -- Volcando estructura para tabla gti_equipo7.parcelas
 CREATE TABLE IF NOT EXISTS `parcelas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -29,9 +24,9 @@ CREATE TABLE IF NOT EXISTS `parcelas` (
 DELETE FROM `parcelas`;
 /*!40000 ALTER TABLE `parcelas` DISABLE KEYS */;
 INSERT INTO `parcelas` (`id`, `nombre`, `color`) VALUES
-	(1, 'Parcela nº1', 'FF8000'),
-	(2, 'Parcela nº2', 'F44336'),
-	(3, 'Parcela nº3', '2196F3');
+	(1, 'Parcela Santo Tomas', 'FF8000'),
+	(2, 'Parcela Albufera', 'F44336'),
+	(3, 'Parcela Gandia', '2196F3');
 /*!40000 ALTER TABLE `parcelas` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gti_equipo7.usuarios
