@@ -1,0 +1,200 @@
+/*---------------------------------------------------------------------------------------------------------*/
+/*Importamos la fuente Montserrat*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*---------------------------------------------------------------------------------------------------------*/
+/*Inicio menu*/
+header>nav{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.dropbtn {
+    margin: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*Fin menu*/
+/*Inicio Area de la Cabecera*/
+.header-area {
+    background: #ffffff;
+    width: 100%;
+    left: 0;
+    right: 0;
+    /*Flex*/
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow:0 0 10px grey ;
+}
+/*Fin Area de la Cabecera*/
+/*---------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------*/
+/*Inicio Contenido*/
+.contenido{
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", "Montserrat Bold", "Montserrat", sans-serif;
+    align-items: center;
+    margin: 0 auto;
+}
+/*Fin Contenido*/
+/*Inicio Imagen*/
+.imagen{
+    width: 100%;
+    max-width: 325px;
+    height: 298px;
+    margin: 15px 36px 22px;
+    background-color: rgba(215, 215, 215, 0.27);
+    border-radius: 5px;
+}
+/*Fin Imagen*/
+/*Inicio Titulos en h2*/
+h2{
+    margin: 0 auto; /*Así eliminamos el margen por defecto de los h2 y h3*/
+}
+h3{
+    margin: 14px auto; /*Así eliminamos el margen por defecto de los h2 y h3*/
+}
+/*Fin Titulos en h2*/
+/*Inicio contenedores div que hay dentro de contenido*/
+.contenido>div{
+    justify-content: center;
+    margin: 0 31px 0;
+}
+/*Fin contenedores div que hay dentro de contenido*/
+/*Inicio <div> Lista de Sonda*/
+.ListaDeSonda{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #aaaaaa;
+    font-size: 12px;
+    margin: 11px 0 8px;
+    width: 100%;
+}
+#flecha_ListaDeSonda{
+    padding: 5px;
+}
+.ListaDeSonda>p, .ListaDeSonda>a{
+    font-weight: bold;
+    padding: 3px 0;
+    color: #aaaaaa;
+}
+/*Fin <div> Lista de Sonda*/
+/*Inicio contenedor características*/
+.caracteristicas{
+    border-top: 3px solid #aaaaaa;
+    border-bottom: 3px solid #aaaaaa;
+    width: 90%;
+    padding-bottom: 14px;
+}
+.caracteristicas>ul{
+    list-style-position: initial;
+}
+.caracteristicas>ul>li{
+    color: #900c3f;
+}
+/*Fin contenedor características*/
+/*Inicio contenedor descripción*/
+.descripcion>p{
+    text-indent: 15px;
+    font-size: 0.938rem;
+    text-align: justify;
+}
+/*Fin contenedor descripción*/
+/*Incio boton*/
+.boton{
+    display: flex;
+    height: 41px;
+    width: 290px;
+    background: #b8002d;
+    color: white;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    padding-right: 7px;padding-left: 7px;
+}
+/*Fin boton*/
+/*----------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------*/
+/*Inicio Footer*/
+footer {
+    /*Flex*/
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+    border-top: 3px solid #aaaaaa;
+}
+
+footer a {
+    padding: 2px 2px 2px 2px;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    font-family: "Arial Normal", "Arial", sans-serif;
+    color: #000000;
+    text-align: left;
+    line-height: normal;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.row {
+    flex-flow: row nowrap;
+}
+.wrapper_row {
+    padding-top: 2px;
+    min-height: 100px;
+    /*Flex*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.wrapper_col {
+    padding: 15px;
+    /*Flex*/
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+/*Inicio iconos del footer*/
+.icon_footer {
+    width: 75%;
+    height: auto;
+}
+/*Fin iconos del footer*/
+/*----------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------*/

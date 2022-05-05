@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+h1 {
+    font-family: "Montserrat Bold", "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: "Montserrat Bold", "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-family: "Aril", sans-serif;
+    font-weight: 400;
+}
+
+#contenedor {
+    height: 1060px;
+    margin: auto auto;
+}
+
+#cabecera_contenedor {
+    width: auto;
+    height: 70px;
+    opacity: 0.78;
+    padding: 2px 2px 2px 2px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px 0px rgba(121, 121, 121, 0.35);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#area_logo {
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+#area_menu {
+    width: 85%;
+    height: auto;
+    display: inline-block;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#imagen_logo_GTI {
+    width: 160px;
+    height: 70px;
+    box-sizing: border-box;
+}
+
+.dropbtn {
+    margin: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#Titulo_Pagina {
+    font-size: 45px;
+    text-align: center;
+    height: 60px;
+    z-index: -1;
+}
+
+.Linea-Larga {
+    height: 2.5px;
+    background-color: rgb(85, 85, 85);
+    opacity: 60%;
+    border-radius: 10px;
+    width: 90%;
+    transform: translate(0px, 0px);
+}
+
+.Linea-Larga-Fin {
+    height: 2.5px;
+    background-color: rgb(85, 85, 85);
+    opacity: 60%;
+    border-radius: 10px;
+    width: 90%;
+    transform: translate(0px, 58px);
+}
+
+
+/*-------------------------------------------------------  */
+
+.Area-Informacion {
+    background-color: rgba(196, 196, 196, 0.283);
+    display: flex;
+    justify-content: center;
+    transform: translate(0px, -10px);
+    height: 210px;
+}
+
+.Informacion-Texto {
+    /* border: 1px solid red; */
+    height: 180px;
+    width: 300px;
+    transform: translate(-5px, -0px);
+}
+
+.Titulo-Informacion {
+    /* border: 1px solid black; */
+    padding: 3px 10px;
+    display: flex;
+    justify-content: center;
+    transform: translate(-18px, 10px);
+}
+
+.Parrafo-Informacion {
+    /* border: 1px solid green; */
+    text-align: justify;
+    padding: 0px 10px;
+    font-size: 15px;
+}
+
+.Area-Icono {
+    align-self: center;
+    /* border: 1px solid blue; */
+    padding: 10px 0px;
+    transform: translate(10px, 0px);
+}
+
+.Icono {
+    height: 100px;
+}
+
+.Linea-Corta {
+    height: 2.5px;
+    background-color: rgb(85, 85, 85);
+    opacity: 60%;
+    border-radius: 10px;
+    width: 30%;
+    transform: translate(0px, -20px);
+}
+
+
+/* ----------------------------------------------------- */
+
+.Area-Informacion-B {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    height: 180px;
+}
+
+.Area-Icono-B {
+    align-self: center;
+    transform: translate(5px, 0px);
+}
+
+.Icono-B {
+    height: 100px;
+}
+
+.Informacion-Texto-B {
+    height: 180px;
+    width: 330px;
+    transform: translate(15px, -25px);
+}
+
+.Titulo-Informacion-B {
+    transform: translate(25px, 5px);
+    width: 140px;
+}
+
+.Parrafo-Informacion-B {
+    transform: translate(0px, 0px);
+    font-size: 15px;
+    text-align: justify;
+    width: 330px;
+}
+
+.Linea-Corta-B {
+    height: 2.5px;
+    background-color: rgb(85, 85, 85);
+    opacity: 60%;
+    border-radius: 10px;
+    width: 30%;
+}
+
+
+/* ----------------------------------------------------------- */
+
+.Area-Informacion-T {
+    /* border: 1px solid red; */
+    background-color: rgba(196, 196, 196, 0.283);
+    display: flex;
+    justify-content: center;
+    transform: translate(0px, -10px);
+    height: 210px;
+}
+
+.Informacion-Texto-T {
+    /* border: 1px solid red; */
+    height: 180px;
+    width: 300px;
+    transform: translate(-5px, -0px);
+}
+
+.Parrafo-Informacion-T {
+    /* border: 1px solid green; */
+    text-align: justify;
+    padding: 0px 10px;
+    font-size: 15px;
+}
+
+.Linea-Corta-T {
+    height: 2.5px;
+    background-color: rgb(85, 85, 85);
+    opacity: 60%;
+    border-radius: 10px;
+    width: 30%;
+    transform: translate(0px, -20px);
+}
+
+.Titulo-Informacion-T {
+    /* border: 1px solid black; */
+    padding: 3px 10px;
+    display: flex;
+    justify-content: center;
+    transform: translate(-81px, 20px);
+}
+
+.Area-Icono-T {
+    align-self: center;
+    /* border: 1px solid blue; */
+    padding: 10px 0px;
+    transform: translate(10px, 0px);
+}
+
+.Icono-T {
+    height: 100px;
+}
+
+
+/* ----------------------------------------------------------- */
+
+.Area-Informacion-Q {
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+    height: 210px;
+    transform: translate(0px, -20px);
+}
+
+.Area-Icono-Q {
+    align-self: center;
+}
+
+.Icono-Q {
+    height: 140px;
+}
+
+.Linea-Corta-Q {
+    height: 2.5px;
+    background-color: rgb(85, 85, 85);
+    opacity: 60%;
+    border-radius: 10px;
+    width: 30%;
+    transform: translate(0px, -35px);
+}
+
+#Subir {
+    display: flex;
+    justify-content: end;
+    transform: translate(0px, -15px);
+}
+
+.Informacion-Texto-Q {
+    height: 180px;
+    width: 330px;
+    transform: translate(15px, 0px);
+}
+
+.Titulo-Informacion-Q {
+    /* border: 1px solid orange; */
+    transform: translate(25px, 5px);
+    width: 140px;
+}
+
+.Parrafo-Informacion-Q {
+    /* border: 1px solid pink; */
+    transform: translate(0px, 0px);
+    font-size: 15px;
+    text-align: justify;
+    width: 330px;
+}
+
+#pie_pagina {
+    display: flex;
+    justify-content: space-around;
+    transform: translate(0%, 70px);
+}
+
+#area_iconos_footer {
+    display: flex;
+    padding: 5px 10px;
+    height: -4px;
+    width: 200px;
+    justify-content: space-between;
+}
+
+.iconoft {
+    height: 30px;
+    padding: 0px 10px;
+}
+
+.icono-footer {
+    display: flex;
+    padding: 0px 10px;
+    align-items: center;
+    width: 30px;
+}
+
+#icono-arriba {
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    transform: translate(0px, -20px);
+}
+
+.Icono_Arriba {
+    height: 25px;
+}
+
+#contenedor_informacion_footer {
+    display: flex;
+    font-size: 13px;
+    padding: 2px;
+}
+
+.informacion-footer {
+    align-content: space-around;
+    padding: 1px;
+}
+
+
+/* Aqui estan los codigos de responsive  */
+
+@media(min-width: 650px) {
+    /*------------------- Primera persona------------------------- */
+    #contenedor_contenido {
+        display: flex;
+    }
+    .Area-Informacion {
+        background-color: rgba(196, 196, 196, 0.283);
+        flex-direction: column;
+        height: 400px;
+    }
+    .Informacion-Texto {
+        transform: translate(0px, -30px);
+        height: 180px;
+    }
+    .Titulo-Informacion {
+        transform: translate(10px, 10px);
+        font-size: 28px;
+        width: 260px;
+    }
+    .Area-Icono {
+        height: 150px;
+        width: 230px;
+        display: flex;
+        justify-content: center;
+        transform: translate(0px, -20px);
+    }
+    .Icono {
+        height: 150px;
+    }
+    .Linea-Corta {
+        height: 150px;
+        width: 20px;
+        border: 1px solid gray;
+        transform: translate(0px, 100px);
+    }
+    /*------------------- Segunda persona------------------------- */
+    .Area-Informacion-B {
+        flex-direction: column;
+        height: 400px;
+        width: 325px;
+        transform: translate(0px, -10px);
+    }
+    .Area-Icono-B {
+        display: flex;
+        justify-content: center;
+        transform: translate(0px, -30px);
+    }
+    .Icono-B {
+        height: 120px;
+    }
+    .Informacion-Texto-B {
+        height: 180px;
+        width: 330px;
+        transform: translate(15px, -25px);
+    }
+    .Titulo-Informacion-B {
+        transform: translate(50px, 10px);
+    }
+    .Parrafo-Informacion-B {
+        width: 290px;
+        height: 110px;
+    }
+    .Linea-Corta-B {
+        height: 150px;
+        width: 20px;
+        border: 1px solid gray;
+        transform: translate(0px, 100px);
+    }
+    /* -------------------------------------------------------- */
+    .Area-Informacion-T {
+        flex-direction: column;
+        height: 400px;
+    }
+    .Parrafo-Informacion-T {
+        width: 275px;
+        transform: translate(0px, 10px);
+    }
+    .Linea-Corta-T {
+        height: 150px;
+        width: 20px;
+        border: 1px solid gray;
+        transform: translate(0px, 100px);
+    }
+    .Area-Icono-T {
+        transform: translate(0px, -20px);
+    }
+    .Icono-T {
+        height: 125px;
+    }
+    /* --------------------------------------------------------- */
+    .Area-Informacion-Q {
+        flex-direction: column;
+        height: 400px;
+        width: 400px;
+        transform: translate(0px, -10px);
+    }
+    .Area-Icono-Q {
+        display: flex;
+        justify-content: center;
+        transform: translate(0px, -20px);
+    }
+    .Icono-Q {
+        height: 170px;
+    }
+    .Informacion-Texto-Q {
+        width: 280px;
+    }
+    .Titulo-Informacion-Q {
+        transform: translate(20px, -30px);
+    }
+    .Parrafo-Informacion-Q {
+        width: 250px;
+        transform: translate(0px, -40px);
+    }
+    .Linea-Corta-Q {
+        height: 150px;
+        width: 20px;
+        border: 1px solid gray;
+        transform: translate(0px, 100px);
+    }
+    .Linea-Larga {
+        height: 360px;
+        width: 30px;
+        border: 1px solid gray;
+    }
+    .Linea-Larga-Fin {
+        height: 3spx;
+        width: 80%;
+        border: 1px solid gray;
+        transform: translate(0px, -460px);
+    }
+    /* --------------------------------------------------------- */
+    /* Aqui estan los codigos de footer */
+    #Subir {
+        transform: translate(0px, 3px);
+    }
+    #pie_pagina {
+        transform: translate(0px, -460px);
+    }
+    footer a {
+        padding: 2px 2px 2px 2px;
+        background-color: rgba(255, 255, 255, 0);
+        box-sizing: border-box;
+        font-family: "Arial Normal", "Arial", sans-serif;
+        color: #000000;
+        text-align: left;
+        line-height: normal;
+        text-decoration: none;
+        font-size: 10px;
+    }
+}

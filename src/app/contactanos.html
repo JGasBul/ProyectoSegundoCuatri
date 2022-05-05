@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" style="min-height: 100%">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos</title>
+    <link rel="stylesheet" href="css/contactanos.css" type="text/css">
+</head>
+<body>
+<!--Inicio Cabecera-->
+<header class="header-area">
+    <div class="logo">
+        <a href="../index.html"><img src="../assets/logo.svg" alt="logo_empresa" width="150" /></a>
+    </div>
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn"><img src="../assets/menu.svg" alt="Boton de menu"></button>
+            <div class="dropdown-content">
+                <a href="Pagina_Sobre_Nosotros.html">Sobre Nosotros</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="servicios.html">Servicios</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--Fin Cabecera-->
+<!--Inicio Contenido-->
+<div class="contenido">
+    <!--Titulo Contactanos-->
+    <h1>Contáctanos</h1>
+    <!--Inicio Formulario-->
+    <form onsubmit="enviarFormulario(event)">
+        <!--Nombre-->
+        <div>
+            <img src="../assets/importante.svg" alt="importante">
+            <label for="nombre">Nombre</label>
+        </div>
+        <input id="nombre" placeholder="Introduzca su nombre" type="text" required>
+        <!--Apellidos-->
+        <div>
+            <img src="../assets/importante.svg" alt="importante">
+            <label for="apellidos">Apellidos</label>
+        </div>
+        <input id="apellidos" placeholder="Introduzca sus apellidos" type="text" required>
+        <!--E-mail-->
+        <div>
+            <img src="../assets/importante.svg" alt="importante">
+            <label for="email">E-mail</label>
+        </div>
+        <input id="email" placeholder="Introduzca su e-mail" type="email" required>
+        <!--Asunto-->
+        <div>
+            <img src="../assets/importante.svg" alt="importante">
+            <label for="selector-asunto">Asunto</label>
+        </div>
+        <select id="selector-asunto">
+            <option>Seleccione una opción</option>
+            <option>Cuenta nueva</option>
+            <option>Error de sonda</option>
+            <option>Otro</option>
+        </select>
+        <label id="aviso-asunto">Elija una opción</label>
+        <!--Comentarios-->
+        <label for="comentarios">Comentarios</label>
+        <input id="comentarios" type="text">
+        <!--Botón Enviar-->
+        <input type="submit" value="ENVIAR">
+    </form>
+    <!--Fin Formulario-->
+</div>
+<!--Fin Contenido-->
+<!--contactanos.js-->
+<script src="js/contactanos.js"></script>
+</body>
+</html>
