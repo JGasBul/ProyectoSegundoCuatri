@@ -12,19 +12,19 @@
 
 <!-- Header -->
 <div id="scroll_arriba"></div>
-<header class="header-area" >
+<header class="header-area">
     <div class="logo">
         <a href=""><img src="./assets/logo.svg" alt="logo_empresa" width="150"/></a>
     </div>
     <nav>
-        <a href="./app/login.html" class="login" onmouseover="opacityless(this)"
+        <a href="./app/login.php" class="login" onmouseover="opacityless(this)"
            onmouseout="opacitynormal(this)">Login</a>
         <div class="dropdown">
             <button class="dropbtn"><img src="./assets/menu.svg" alt="Boton de menu"></button>
             <div class="dropdown-content">
                 <a href="#">Sobre Nosotros</a>
-                <a href="#">Catálogo</a>
-                <a href="#">Servicios</a>
+                <a href="./app/catalogo.html">Catálogo</a>
+                <a href="./app/servicios.html">Servicios</a>
             </div>
         </div>
     </nav>
@@ -36,17 +36,18 @@
         CULTIVA INTELIGENTE, CULTIVA MEJOR
     </div>
     <div class="subtitulo">
-        LLEVA LA AGRICULTURA AL SIGUIENTE NIVEL CON NUESTRAS SONDAS
+        Lleva la agricultura al siguiente nivel con nuestras sondas
     </div>
     <div class="button">
-        <a href="#">
-            <button name="Contactanos" onmouseover="opacityless(this)" onmouseout="opacitynormal(this)">CONTÁCTANOS</button>
+        <a href="./app/contactanos.html">
+            <button name="Contactanos" onmouseover="opacityless(this)" onmouseout="opacitynormal(this)">CONTÁCTANOS
+            </button>
         </a>
     </div>
 
-    <div class="flecha abajo" >
+    <div class="flecha abajo">
         <a href="#Tp_flecha">
-        <img src="./assets/flecha.svg" alt="Flecha">
+            <img src="./assets/flecha.svg" alt="Flecha">
         </a>
         <div id="Tp_flecha"></div>
     </div>
@@ -55,36 +56,125 @@
 <div class="separador">
 </div>
 
-<div class="content-area">
-    <section>
-        <div>
-            <div class="titulo_seccion">
-                Toda la información al alcance de tu mano
-            </div>
-        </div>
-        <div class="wrapper_row white">
-            <div>
-                <img class="img_responsive " src="./assets/movil.jpg" alt="Manos sujetando un movil"/>
-            </div>
-            <div>
-                <p class="text-area1 center">
-                    Gracias a nuestra web podrás ver los parámetros de tu campo en tiempo real, recibir alertas en el
-                    móvil...
-                    <br>
-                    <br>¡Y muchas más cosas!
-                </p>
 
-            </div>
-        </div>
-    </section>
+
+<div class="titulo_seccion">
+    Toda la información al alcance de tu mano
 </div>
+
+<section>
+    <img class="img_responsive" src="./assets/movil.jpg" alt="Manos sujetando un movil"/>
+    <p>
+        Gracias a nuestra web podrás ver los parámetros de tu campo en tiempo real, recibir alertas en el
+        móvil...
+        <br>
+        <br>¡Y muchas más cosas!
+    </p>
+
+</section>
 
 <div class="separador">
 </div>
 
+<div class="titulo_seccion grey">Mediciones en tiempo real</div>
+<section class="grey">
+
+    <p>
+        Máxima información sobre los cultivos: nuestras sondas registran las condiciones de las plantas cada
+        cierto tiempo.
+        <br> <br>Además cuentan con una alarma antirrobo.
+    </p>
+    <div class="container_icons center">
+        <div class="row_icons">
+            <div class="margin-temp"><img src="./assets/bombilla.svg" alt="Iluminación"></div>
+            <div class="end"><img src="./assets/temp.svg" alt="Temperatura"></div>
+        </div>
+        <div class="center"><img src="./assets/Icono_center.svg" alt="Conexión"></div>
+        <div class="row_icons">
+            <div class="margin-gota" ><img src="./assets/campana.svg" alt="Alarma"></div>
+            <div class=""><img src="./assets/gota.svg" alt=Humedad"></div>
+        </div>
+    </div>
+
+</section>
+
+<div class="separador">
+</div>
+
+
+    <div class="titulo_seccion"> Descubre los beneficios</div>
+
+    <div class="slider">
+        <ul>
+            <li > <img src="./assets/new_state1.png" alt="State1">
+            <div class="texto_slider"> Recibe alertas instantáneas en tu móvil y automatiza tus cultivos, además de ver las condiciones en tiempo real. </div></li>
+            <li > <img src="./assets/new_state2.png" alt="State1">
+            <div class="texto_slider">Nuestra web guarda todos los datos para poder acceder después. Gracias a eso es capaz de prevenir plagas.</div></li>
+            <li> <img src="./assets/new_state3.png" alt="State1">
+                <div class="texto_slider">Tenemos servicios disponibles internacionalmente. ¡Incrementa los beneficios ya!</div></li>
+        </ul>
+    </div>
+
+<div class="separador">
+</div>
+
+<div class="titulo_seccion grey"> Nuestros valores:</div>
+<section class="grey">
+    <p><b>Confianza</b>
+        <img class="icon_responsive" src="./assets/manos.svg" alt="hands">
+    <p>Damos una vital importancia a la confianza con nuestros clientes</p>
+</section>
+
+<section class="reves">
+    <p>Nuestro trabajo consiste en una constante evolución y aprendizaje</p>
+    <p><b>Perseverancia</b>
+    <img class="icon_responsive "  src="./assets/libro.svg" alt="hands"></p>
+
+</section>
+
+<section class="grey">
+    <p><b>Comprensión</b>
+        <img class="icon_responsive "  src="./assets/calendario.svg" alt="hands">
+    <p>Nos adaptamos a su horario sin compromiso</p>
+
+
+</section>
+
+<div class="big_separador">
+</div>
+
+<footer class="row " >
+    <div class="wrapper_row" >
+        <div>
+            <img class=" icon_footer " src="./assets/trash.svg " alt="Reciclar ">
+        </div>
+        <div>
+            <img class="icon_footer " src="./assets/mail.svg " alt="Correo ">
+        </div>
+        <div>
+            <img class="icon_footer " src="./assets/chat.svg " alt="Mensajeria ">
+        </div>
+    </div>
+    <div>
+        <ul class="wrapper_col">
+            <a href="#">Contacto</a>
+            <a href="#">Términos y Condiciones</a>
+        </ul>
+    </div>
+    <div>
+        <ul class="wrapper_col">
+            <a href="#">Política de Cookies</a>
+            <a href="#">Política de Privacidad</a>
+        </ul>
+    </div>
+</footer>
+
+    <!--
+
+
 <section class="grey">
     <div>
-        <div class="titulo_seccion">Mediciones en tiempo real</div>
+
     </div>
 
     <div class="wrapper_row white">
@@ -216,7 +306,7 @@
         </ul>
     </div>
 </footer>
-
+-->
 <script>
     function opacityless(x) {
         x.style.opacity = "60%";

@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
+* {
+    font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
+}
+
+/* Hide the checkboxes */
+input[type='checkbox'] {
+    display: none;
+}
+
+/* Default styling for labels to make them look like buttons */
+input[type='checkbox']+label {
+    display: inline-block;
+    box-shadow: 1px 1px grey;
+    border-radius: 3px;
+    background-color: rgba(144, 12, 63, 0.84);
+    text-align: center;
+    padding: 5px;
+    margin-right: 3px;
+    margin-left: 20px;
+    margin-top: 3px;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Styling for labels when corresponding checkbox is checked */
+input[type='checkbox']:checked+label {
+    box-shadow: -1px -1px grey;
+    background-color: #f78d32;
+}
+
+#mapa {
+    width: 100%;
+    height: 50vh;
+    background-color: gray;
+}
+
+#selector-parcelas {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    padding-top: 0.67em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#contenedor {
+    height: 1100px;
+    margin: auto auto;
+    background-image: url("../../../assets/background.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+#imagen_logo_GTI {
+    width: 160px;
+    height: 70px;
+    box-sizing: border-box;
+}
+
+
+/* ------------------------------------------ */
+
+.dropbtn {
+    margin: 16px;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40%;
+    padding: 2px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0px;
+    background-color: #900c3f;
+
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #c30f54;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#cabecera_contenedor {
+    width: auto;
+    height: 70px;
+    opacity: 0.78;
+    padding: 2px 2px 2px 2px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px 0px rgba(121, 121, 121, 0.35);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#area_logo {
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+/* ------------------------------------------ */
+
+#titulo {
+    text-align: center;
+    font-size: 25px;
+}
+
+.Linea-Larga {
+    height: 2.5px;
+    background-color: rgb(85, 85, 85);
+    opacity: 60%;
+    border-radius: 10px;
+    width: 30%;
+    transform: translate(0px, 9px);
+}
+
+#img-mapa {
+    width: 100%;
+}
+
+#area-boton {
+    display: flex;
+    justify-content: space-around;
+}
+
+#boton_selector_sel {
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 30px;
+    background-color: #900c3f;
+    text-align: center;
+    margin-right: 3px;
+    margin-left: 20px;
+    margin-top: 3px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+#boton_selector_sel:hover {
+    font-size: 1.2rem;
+    color: black;
+
+}
+
+#boton_selector_nosel:hover {
+    font-size: 1.2rem;
+    color: black;
+}
+
+
+
+#boton_selector_nosel {
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 30px;
+    background-color: rgba(144, 12, 63, 0.84);
+    text-align: center;
+    margin-left: 3px;
+    margin-right: 20px;
+    margin-top: 3px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+#titulo_busca_sonda {
+    margin-left: 20px;
+    font-size: 18px;
+
+}
+
+#buscador_sonda {
+    border: 1.5px solid #900c3f;
+    height: 40px;
+    width: 82%;
+    padding: 2px 2px 2px 48px;
+    transform: translate(20px, -15px);
+    text-align: left;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#icono_buscar {
+    height: 25px;
+    transform: translate(34px, -51px);
+
+}
+
+#area_vmd {
+
+    display: flex;
+    justify-content: center;
+    transform: translate(0px, 310px);
+    height: 30px;
+}
+
+#boton_vmd {
+
+    border-radius: 5px;
+    width: 30%;
+    background-color: #900c3f;
+    text-align: center;
+    color: #ffffff;
+}
