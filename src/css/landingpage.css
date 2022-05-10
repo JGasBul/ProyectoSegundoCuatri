@@ -2,7 +2,12 @@
 html{
     scroll-behavior: smooth;
 }
-
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat Medium", "Montserrat Regular", "Montserrat", sans-serif;
+    align-items: center;
+}
 section{
     max-width:100%;
     padding: 1rem;
@@ -12,22 +17,22 @@ section{
     align-items: center;
 }
 
-
-
-
 @media(max-width: 600px){
     section{
         flex-direction: column;
     }
     .img_responsive{
-        width: 30%;
         margin-right: 0;
+        width: 80%;
+        height: 100%;
     }
+
     .icon_responsive{
         display: flex;
         margin: auto;
-        width: 100%;
-        min-width: 15%;
+        width: 15%;
+
+
     }
     .reves{
         flex-direction: column-reverse;
@@ -39,16 +44,12 @@ section{
     }
     .container_icons{
         padding-top: 10%;
-
+        margin-left: 50%;
     }
 
+
 }
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Montserrat Medium", "Montserrat Regular", "Montserrat", sans-serif;
-    align-items: center;
-}
+
 /*Header*/
 nav {
     display: flex;
@@ -304,18 +305,6 @@ footer a {
 }
 
 
-
-.text-area2{
-    margin-right: 7%;
-    width: 100%;
-    height: 213px;
-    min-height: 213px;
-    font-size: 18px;
-    padding:10px;
-    max-height: 214px;
-}
-
-
 .sep{
     padding-right: 40px;
 }
@@ -377,15 +366,12 @@ footer a {
 }
 
 .img_responsive {
-    padding-bottom: 4px;
-    padding-top: 2%;
-    padding-left:-15px;
     width:80%;
-    height:60%;
-    margin-top: 2px;
-    min-width: 400px;
-    max-height: 350px;
-    min-height: 370px;
+    max-height:600px;
+    max-width: 400px;
+    margin-top: 6%;
+    margin-bottom: 7%;
+
 
 }
 
@@ -393,8 +379,7 @@ footer a {
 .icon_responsive {
     display: flex;
     margin: auto;
-    width: 15%;
-    min-width: 15%;
+
 
 }
 
@@ -404,6 +389,7 @@ footer a {
 
 .margin-temp{
     margin-bottom: 350%;
+    max-height: 200px;
 }
 .margin-gota{
     margin-bottom: 400%;
@@ -422,6 +408,7 @@ footer a {
     min-height: 150px;
     margin-top: 2px;
     display: flex;
+    margin-left: 10%;
 
 }
 
@@ -434,19 +421,12 @@ footer a {
 
 .row_icons{
     height: 100%;
-
-   
     padding-right: 10%;
+    width: 100%;
+    max-height: 400px;
 }
 
-/*Colores
-.grey {
-    width: auto;
-    margin-top: -2px;
-
-    height: 300px;
-    background-color: rgba(170, 170, 170, 0.16);
-}*/
+/*Colores*/
 .grey{
     background-color: rgba(170, 170, 170, 0.16);
 }
@@ -481,18 +461,20 @@ footer a {
 /*Slider*/
 .container_slider {
     width: 100%;
-    height: 300px;
+    height:100px;
 
 }
 .slider{
     width: 100%;
     margin: auto;
+    height: 50%;
     overflow: hidden;
 }
 .slider ul{
     margin-top: 35px;
     display: flex;
     padding: 0;
+    width: 400%;
     animation: cambio 20s infinite alternate linear ;
 
 }
@@ -503,22 +485,25 @@ footer a {
     padding-bottom: 100px;
 }
 
-.slider img{
-   width: 500px;
-    margin-bottom: 20px;
-    padding-bottom: 100px;
-    object-fit: fill;
+.slider li img{
+   width: 100%;
+    max-height: 300px;
+
+    object-fit: contain ;
 }
 
 @keyframes cambio {
     0%{margin-left:0;}
-    30%{margin-left: 0}
+    20%{margin-left: 0}
 
-    35%{margin-left: -105%}
-    70%{margin-left: -105%}
+    25%{margin-left: -100%}
+    45%{margin-left: -100%}
 
-    75%{margin-left: -210%}
-    100%{margin-left: -210%}
+    50%{margin-left: -200%}
+    70%{margin-left: -200%}
+
+    75%{margin-left: -300%}
+    100%{margin-left: -300%}
 
 
 

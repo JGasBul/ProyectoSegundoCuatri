@@ -1,0 +1,12 @@
+Acceso datos en servidor upv:
+Enlace: https://zpasgon.upv.edu.es/src/index.html
+
+ACESO LOGIN:
+
+_____Rol_____ 	 _______Correo________  	_______Contraseña________
+
+-Admin			admin@gmail.com			admin
+
+-Usuario			propietario1@gmail.com		1234
+
+-Usuario			propietario2@gmail.com		1234
