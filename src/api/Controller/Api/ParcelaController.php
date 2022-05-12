@@ -45,6 +45,10 @@ class ParcelaController extends BaseController
         }
     }
 
+    /**
+     * "/parcela/user" Endpoint - Get the parcelas of a specific user
+     */
+
     public function userAction()
     {
         $strErrorDesc = '';
@@ -85,6 +89,11 @@ class ParcelaController extends BaseController
             );
         }
     }
+
+    /**
+     * "/parcela/vertices" Endpoint - Get the vertices of a specific parcela
+     */
+
     public function verticesAction()
     {
         $strErrorDesc = '';
@@ -130,6 +139,11 @@ class ParcelaController extends BaseController
             );
         }
     }
+
+    /**
+     * "/parcela/parcela" Endpoint - Get the parcela of a specific id
+     */
+
     public function parcelaAction()
     {
         $strErrorDesc = '';

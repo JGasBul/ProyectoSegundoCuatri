@@ -1,8 +1,6 @@
 <?php
 require_once PROJECT_ROOT_PATH . "/Model/Database.php";
 
-//Aqui añadir todos los get que hagan falta de la tabla user
-
 class ParcelaModel extends Database
 {
     public function getParcela($id)
