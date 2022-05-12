@@ -33,6 +33,7 @@
         <script>
             let map;
             let parcelas;
+            let zoom = false;
 
             async function initMap() {
 
@@ -84,24 +85,25 @@
             }
 
             async function obtenerParcelasUsuario(usuario) {
+                crearMapa();
                 let consulta = await fetch("http://localhost/src/api/parcela.php/user?usuario=" + usuario);
                 parcelas = await consulta.json();
-
-                crearSelector();
-
-                crearMapa();
+                for (let index = 0; index < parcelas.length; index++) {
+                    await crearPoligono(parcelas, index);
+                }
+                ajustarMapa();
             }
 
             function crearSelector() {
                 let selector = document.getElementById("selector-parcelas");
-                parcelas.forEach(function(parcela, index) {
+                parcelas.forEach(function (parcela, index) {
                     let label = document.createElement('label');
                     label.textContent = parcela.nombre_parcela;
                     label.setAttribute("for", "button" + index);
                     let check = document.createElement('input');
                     check.setAttribute("id", "button" + index);
                     check.type = 'checkbox';
-                    check.addEventListener('change', function() {
+                    check.addEventListener('change', function () {
                         mostrarOcultarParcela(index, check.checked);
                     })
                     selector.append(check);
@@ -109,30 +111,11 @@
                 })
             }
 
-            async function crearPoligono(parcela) {
+            async function crearPoligono(parcelas, x) {
+                let parcela = parcelas[x];
                 let id = parcela.parcela || parcela.id;
                 let consulta = await fetch("http://localhost/src/api/parcela.php/vertices?parcela=" + id);
                 let vertices = await consulta.json();
-                var sonda1 = new google.maps.Marker({
-                    position: vertices[0],
-                    draggable: false
-                });
-                var sonda2 = new google.maps.Marker({
-                    position: vertices[1],
-                    draggable: false
-                });
-                var sonda3 = new google.maps.Marker({
-                    position: vertices[2],
-                    draggable: false
-                });
-                var sonda4 = new google.maps.Marker({
-                    position: vertices[3],
-                    draggable: false
-                });
-                sonda1.setMap(map);
-                sonda2.setMap(map);
-                sonda3.setMap(map);
-                sonda4.setMap(map);
                 parcela.polygon = new google.maps.Polygon({
                     paths: vertices,
                     strokeColor: "#" + parcela.color,
@@ -141,6 +124,28 @@
                     fillColor: "#" + parcela.color,
                     fillOpacity: 0.35,
                     map: map
+                });
+                google.maps.event.addListener(parcela.polygon, 'click', function (event) {
+                    for (let y = 0; y < parcelas.length; y++) {
+                        const parcela = parcelas[y];
+                        if (!zoom) {
+                            if (x != y) {
+                                if (parcela.polygon) parcela.polygon.setMap(null);
+                            }
+                        } else {
+                            if (x != y) {
+                                parcela.polygon.setMap(map);
+                            }
+                        }
+                    }
+                    if (!zoom) {
+                        zoom = true;
+                        
+                    } else {
+                        zoom = false;
+                    }
+                    ajustarMapa();
+                    //alert(parcela.parcela || parcela.id);
                 });
             }
 
@@ -160,9 +165,9 @@
 
             function ajustarMapa() {
                 let bounds = new google.maps.LatLngBounds();
-                parcelas.forEach(function(parcela) {
+                parcelas.forEach(function (parcela) {
                     if (parcela.polygon && parcela.polygon.getMap()) {
-                        parcela.polygon.getPath().getArray().forEach(function(v) {
+                        parcela.polygon.getPath().getArray().forEach(function (v) {
                             bounds.extend(v);
                         })
                     }
@@ -170,8 +175,9 @@
                 if (!bounds.isEmpty()) map.fitBounds(bounds);
             }
         </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHr7bzm-oLpXkbx9-q0KwTll7cN6blr9I&callback=initMap">
-        </script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHr7bzm-oLpXkbx9-q0KwTll7cN6blr9I&callback=initMap">
+            </script>
 
 </body>
 
