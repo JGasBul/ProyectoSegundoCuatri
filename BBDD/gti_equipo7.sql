@@ -13,23 +13,64 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 -- Volcando estructura para tabla gti_equipo7.parcelas
+DROP TABLE IF EXISTS `parcelas`;
 CREATE TABLE IF NOT EXISTS `parcelas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(60) NOT NULL,
   `color` varchar(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla gti_equipo7.parcelas: ~3 rows (aproximadamente)
 DELETE FROM `parcelas`;
 /*!40000 ALTER TABLE `parcelas` DISABLE KEYS */;
 INSERT INTO `parcelas` (`id`, `nombre`, `color`) VALUES
-	(1, 'Parcela Santo Tomas', 'FF8000'),
-	(2, 'Parcela Albufera', 'F44336'),
-	(3, 'Parcela Gandia', '2196F3');
+	(1, 'Parcela nº1', 'FF8000'),
+	(2, 'Parcela nº2', 'F44336'),
+	(3, 'Parcela nº3', '2196F3');
 /*!40000 ALTER TABLE `parcelas` ENABLE KEYS */;
 
+-- Volcando estructura para tabla gti_equipo7.posicion_sonda
+DROP TABLE IF EXISTS `posicion_sonda`;
+CREATE TABLE IF NOT EXISTS `posicion_sonda` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lat` decimal(10,7) NOT NULL,
+  `lng` decimal(10,7) NOT NULL,
+  `sonda` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `fk_vertice_sonda` (`sonda`) USING BTREE,
+  CONSTRAINT `fk_vertice_sonda` FOREIGN KEY (`sonda`) REFERENCES `sondas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Volcando datos para la tabla gti_equipo7.posicion_sonda: ~1 rows (aproximadamente)
+DELETE FROM `posicion_sonda`;
+/*!40000 ALTER TABLE `posicion_sonda` DISABLE KEYS */;
+INSERT INTO `posicion_sonda` (`id`, `lat`, `lng`, `sonda`) VALUES
+	(14, 38.9981639, -0.1720151, 1);
+/*!40000 ALTER TABLE `posicion_sonda` ENABLE KEYS */;
+
+-- Volcando estructura para tabla gti_equipo7.sondas
+DROP TABLE IF EXISTS `sondas`;
+CREATE TABLE IF NOT EXISTS `sondas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario` int(11) NOT NULL,
+  `parcela` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK1_sonda_parcela` (`parcela`),
+  KEY `FK2_sonda_usuario` (`usuario`),
+  CONSTRAINT `FK1_sonda_parcela` FOREIGN KEY (`parcela`) REFERENCES `parcelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK2_sonda_usuario` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Volcando datos para la tabla gti_equipo7.sondas: ~1 rows (aproximadamente)
+DELETE FROM `sondas`;
+/*!40000 ALTER TABLE `sondas` DISABLE KEYS */;
+INSERT INTO `sondas` (`id`, `usuario`, `parcela`) VALUES
+	(1, 1, 1);
+/*!40000 ALTER TABLE `sondas` ENABLE KEYS */;
+
 -- Volcando estructura para tabla gti_equipo7.usuarios
+DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(60) NOT NULL,
@@ -37,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `password` varchar(60) NOT NULL,
   `rol` enum('admin','normal') NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla gti_equipo7.usuarios: ~3 rows (aproximadamente)
 DELETE FROM `usuarios`;
@@ -49,6 +90,7 @@ INSERT INTO `usuarios` (`id`, `email`, `nombre`, `password`, `rol`) VALUES
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gti_equipo7.usuarios_parcelas
+DROP TABLE IF EXISTS `usuarios_parcelas`;
 CREATE TABLE IF NOT EXISTS `usuarios_parcelas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` int(11) NOT NULL,
@@ -58,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `usuarios_parcelas` (
   KEY `fk_usuario_parcela_parcela` (`parcela`),
   CONSTRAINT `fk_usuario_parcela_parcela` FOREIGN KEY (`parcela`) REFERENCES `parcelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_usuario_parcela_usuario` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla gti_equipo7.usuarios_parcelas: ~4 rows (aproximadamente)
 DELETE FROM `usuarios_parcelas`;
@@ -71,6 +113,7 @@ INSERT INTO `usuarios_parcelas` (`id`, `usuario`, `parcela`) VALUES
 /*!40000 ALTER TABLE `usuarios_parcelas` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gti_equipo7.vertices
+DROP TABLE IF EXISTS `vertices`;
 CREATE TABLE IF NOT EXISTS `vertices` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `lat` decimal(10,7) NOT NULL,
@@ -79,9 +122,9 @@ CREATE TABLE IF NOT EXISTS `vertices` (
   PRIMARY KEY (`id`),
   KEY `fk_vertice_parcela` (`parcela`),
   CONSTRAINT `fk_vertice_parcela` FOREIGN KEY (`parcela`) REFERENCES `parcelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla gti_equipo7.vertices: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla gti_equipo7.vertices: ~13 rows (aproximadamente)
 DELETE FROM `vertices`;
 /*!40000 ALTER TABLE `vertices` DISABLE KEYS */;
 INSERT INTO `vertices` (`id`, `lat`, `lng`, `parcela`) VALUES
@@ -101,6 +144,7 @@ INSERT INTO `vertices` (`id`, `lat`, `lng`, `parcela`) VALUES
 /*!40000 ALTER TABLE `vertices` ENABLE KEYS */;
 
 -- Volcando estructura para vista gti_equipo7.vista_parcelas_con_vertices
+DROP VIEW IF EXISTS `vista_parcelas_con_vertices`;
 -- Creando tabla temporal para superar errores de dependencia de VIEW
 CREATE TABLE `vista_parcelas_con_vertices` (
 	`id` INT(11) NOT NULL,
@@ -111,6 +155,7 @@ CREATE TABLE `vista_parcelas_con_vertices` (
 ) ENGINE=MyISAM;
 
 -- Volcando estructura para vista gti_equipo7.vista_propiedad_parcelas
+DROP VIEW IF EXISTS `vista_propiedad_parcelas`;
 -- Creando tabla temporal para superar errores de dependencia de VIEW
 CREATE TABLE `vista_propiedad_parcelas` (
 	`usuario` INT(11) NOT NULL,
@@ -121,11 +166,13 @@ CREATE TABLE `vista_propiedad_parcelas` (
 ) ENGINE=MyISAM;
 
 -- Volcando estructura para vista gti_equipo7.vista_parcelas_con_vertices
+DROP VIEW IF EXISTS `vista_parcelas_con_vertices`;
 -- Eliminando tabla temporal y crear estructura final de VIEW
 DROP TABLE IF EXISTS `vista_parcelas_con_vertices`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vista_parcelas_con_vertices` AS select `parcelas`.`id` AS `id`,`parcelas`.`nombre` AS `nombre`,`parcelas`.`color` AS `color`,`vertices`.`lat` AS `lat`,`vertices`.`lng` AS `lng` from (`parcelas` join `vertices` on((`parcelas`.`id` = `vertices`.`parcela`))) ;
 
 -- Volcando estructura para vista gti_equipo7.vista_propiedad_parcelas
+DROP VIEW IF EXISTS `vista_propiedad_parcelas`;
 -- Eliminando tabla temporal y crear estructura final de VIEW
 DROP TABLE IF EXISTS `vista_propiedad_parcelas`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vista_propiedad_parcelas` AS select `usuarios_parcelas`.`usuario` AS `usuario`,`usuarios_parcelas`.`parcela` AS `parcela`,`parcelas`.`nombre` AS `nombre_parcela`,`parcelas`.`color` AS `color`,`usuarios`.`nombre` AS `nombre_usuario` from ((`usuarios_parcelas` join `parcelas` on((`parcelas`.`id` = `usuarios_parcelas`.`parcela`))) join `usuarios` on((`usuarios`.`id` = `usuarios_parcelas`.`usuario`))) ;
