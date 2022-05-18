@@ -15,12 +15,7 @@ class ParcelaController extends BaseController
             try {
                 $parcelaModel = new ParcelaModel();
 
-                $intLimit = 10;
-                if (isset($arrQueryStringParams['limit']) && $arrQueryStringParams['limit']) {
-                    $intLimit = $arrQueryStringParams['limit'];
-                }
-
-                $arrParcelas = $parcelaModel->getAllParcelas($intLimit);
+                $arrParcelas = $parcelaModel->getAllParcelas();
                 $responseData = json_encode($arrParcelas);
             } catch (Error $e) {
                 $strErrorDesc = $e->getMessage() . ' Something went wrong! Please contact support.';

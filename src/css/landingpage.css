@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-html{
+html {
     scroll-behavior: smooth;
 }
+
 * {
     margin: 0;
     padding: 0;
     font-family: "Montserrat Medium", "Montserrat Regular", "Montserrat", sans-serif;
     align-items: center;
 }
-section{
-    max-width:100%;
+
+section {
+    max-width: 100%;
     padding: 1rem;
     margin: 0 auto;
     border-radius: 5px;
@@ -17,40 +19,36 @@ section{
     align-items: center;
 }
 
-@media(max-width: 600px){
-    section{
+@media(max-width: 600px) {
+    section {
         flex-direction: column;
     }
-    .img_responsive{
+    .img_responsive {
         margin-right: 0;
         width: 80%;
         height: 100%;
     }
-
-    .icon_responsive{
+    .icon_responsive {
         display: flex;
         margin: auto;
         width: 15%;
-
-
     }
-    .reves{
+    .reves {
         flex-direction: column-reverse;
     }
-
-    p{
+    p {
         width: 100%;
         text-align: center;
     }
-    .container_icons{
+    .container_icons {
         padding-top: 10%;
         margin-left: 50%;
     }
-
-
 }
 
+
 /*Header*/
+
 nav {
     display: flex;
     align-items: center;
@@ -58,7 +56,7 @@ nav {
     flex-wrap: nowrap;
 }
 
-.opacity{
+.opacity {
     opacity: 60%;
 }
 
@@ -116,10 +114,12 @@ nav {
     line-height: normal;
 }
 
+
 /*Tipografia
 }*/
-p{
-   padding-top: 5%;
+
+p {
+    padding-top: 5%;
     box-sizing: border-box;
     font-family: "Montserrat Medium", "Montserrat", sans-serif;
     font-weight: 500;
@@ -142,12 +142,10 @@ p{
     text-align: center;
     line-height: normal;
     font-size: 11vmin;
-    
-
 }
 
 .subtitulo {
-    margin-top:80px;
+    margin-top: 80px;
     padding-right: 10%;
     padding-left: 10%;
     padding-bottom: 3%;
@@ -168,10 +166,10 @@ p{
     color: #333333;
     text-align: center;
     line-height: normal;
-    font-size:7vmin;
+    font-size: 7vmin;
 }
 
-.texto_slider{
+.texto_slider {
     width: 90%;
     padding-left: 5%;
     padding-right: 5%;
@@ -185,21 +183,24 @@ p{
 
 
 /*Flexbox*/
-.center{
+
+.center {
     align-self: center;
     margin-right: 30px;
     padding-left: 25px;
 }
 
-.arriba{
+.arriba {
     align-items: flex-start;
 }
 
-.end{
+.end {
     align-self: flex-end;
 }
 
+
 /*Iconos flecha*/
+
 .flecha {
     width: auto;
     height: 100px;
@@ -208,13 +209,15 @@ p{
     display: flex;
 }
 
-.flecha_abajo{
+.flecha_abajo {
     transform: rotate(180deg);
     margin-bottom: -90px;
 }
 
+
 /*Separadores*/
-.separador{
+
+.separador {
     align-self: center;
     width: 50%;
     margin-left: 25%;
@@ -225,12 +228,11 @@ p{
     background-color: rgba(0, 0, 0, 0.69);
 }
 
-.big_separador{
+.big_separador {
     align-self: center;
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
-
     height: 5px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.69);
@@ -244,7 +246,7 @@ p{
     position: absolute;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    box-shadow:0 0 10px grey ;
+    box-shadow: 0 0 10px grey;
     /*Flex*/
     display: flex;
     justify-content: space-between;
@@ -253,14 +255,11 @@ p{
 .banner-area {
     /*Hacer una vista de pantalla completa*/
     min-height: 100vh;
-    
     /*Añadir fondo de pagina*/
     background-image: url("../assets/newfondo.jpg");
-
     -webkit-background-size: contain;
     background-size: cover;
     background-position: center center;
-
     /*Flex*/
     display: flex;
     flex-flow: column nowrap;
@@ -278,7 +277,6 @@ p{
     justify-content: center;
     align-content: space-between;
 }
-
 
 footer {
     /*Flex*/
@@ -304,16 +302,14 @@ footer a {
     flex-flow: row nowrap;
 }
 
-
-.sep{
+.sep {
     padding-right: 40px;
 }
 
-.temp{
+.temp {
     position: fixed;
-    background-color:gray;
+    background-color: gray;
 }
-
 
 .columna {
     float: left;
@@ -326,7 +322,6 @@ footer a {
     clear: both;
     display: table;
 }
-
 
 .wrapper_row {
     padding-top: 2px;
@@ -346,8 +341,7 @@ footer a {
     align-items: flex-start;
 }
 
-
-.button button{
+.button button {
     font-size: 20px;
     width: 266px;
     height: 54px;
@@ -366,32 +360,31 @@ footer a {
 }
 
 .img_responsive {
-    width:80%;
-    max-height:600px;
+    width: 80%;
+    max-height: 600px;
     max-width: 400px;
     margin-top: 6%;
     margin-bottom: 7%;
-
-
 }
 
+
 /*Iconos*/
+
 .icon_responsive {
     display: flex;
     margin: auto;
-
-
 }
 
-.icon_margin{
+.icon_margin {
     margin-right: 40px;
 }
 
-.margin-temp{
+.margin-temp {
     margin-bottom: 350%;
     max-height: 200px;
 }
-.margin-gota{
+
+.margin-gota {
     margin-bottom: 400%;
 }
 
@@ -400,7 +393,7 @@ footer a {
     height: auto;
 }
 
-.container_icons{
+.container_icons {
     width: 150%;
     max-width: 40%;
     height: 100%;
@@ -409,102 +402,112 @@ footer a {
     margin-top: 2px;
     display: flex;
     margin-left: 10%;
-
 }
 
-.icons{
+.icons {
     width: 100%;
     padding-left: 100%;
     flex-direction: row;
     justify-items: center;
 }
 
-.row_icons{
+.row_icons {
     height: 100%;
     padding-right: 10%;
     width: 100%;
     max-height: 400px;
 }
 
+
 /*Colores*/
-.grey{
+
+.grey {
     background-color: rgba(170, 170, 170, 0.16);
 }
-.smallgrey{
+
+.smallgrey {
     width: auto;
     margin-top: -2px;
     height: 150px;
     background-color: rgba(170, 170, 170, 0.16);
-
 }
 
-.smallwhite{
+.smallwhite {
     width: auto;
     margin-top: -2px;
     height: 150px;
 }
 
-.color_footer{
+.color_footer {
     width: 100%;
-   border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-   background-color:lightgrey;
-
+    background-color: lightgrey;
 }
 
 .white {
     width: 100%;
     height: 215px;
-
 }
+
 
 /*Slider*/
+
 .container_slider {
     width: 100%;
-    height:100px;
-
+    height: 100px;
 }
-.slider{
+
+.slider {
     width: 100%;
     margin: auto;
     height: 50%;
     overflow: hidden;
 }
-.slider ul{
+
+.slider ul {
     margin-top: 35px;
     display: flex;
     padding: 0;
     width: 400%;
-    animation: cambio 20s infinite alternate linear ;
-
+    animation: cambio 20s infinite alternate linear;
 }
 
-.slider li{
+.slider li {
     width: 100%;
     list-style: none;
     padding-bottom: 100px;
 }
 
-.slider li img{
-   width: 100%;
+.slider li img {
+    width: 100%;
     max-height: 300px;
-
-    object-fit: contain ;
+    object-fit: contain;
 }
 
 @keyframes cambio {
-    0%{margin-left:0;}
-    20%{margin-left: 0}
-
-    25%{margin-left: -100%}
-    45%{margin-left: -100%}
-
-    50%{margin-left: -200%}
-    70%{margin-left: -200%}
-
-    75%{margin-left: -300%}
-    100%{margin-left: -300%}
-
-
-
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0
+    }
+    25% {
+        margin-left: -100%
+    }
+    45% {
+        margin-left: -100%
+    }
+    50% {
+        margin-left: -200%
+    }
+    70% {
+        margin-left: -200%
+    }
+    75% {
+        margin-left: -300%
+    }
+    100% {
+        margin-left: -300%
+    }
 }

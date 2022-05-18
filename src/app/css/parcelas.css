@@ -3,12 +3,16 @@
     font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
 }
 
+
 /* Hide the checkboxes */
+
 input[type='checkbox'] {
     display: none;
 }
 
+
 /* Default styling for labels to make them look like buttons */
+
 input[type='checkbox']+label {
     display: inline-block;
     box-shadow: 1px 1px grey;
@@ -24,7 +28,9 @@ input[type='checkbox']+label {
     cursor: pointer;
 }
 
+
 /* Styling for labels when corresponding checkbox is checked */
+
 input[type='checkbox']:checked+label {
     box-shadow: -1px -1px grey;
     background-color: #f78d32;
@@ -47,7 +53,6 @@ input[type='checkbox']:checked+label {
 }
 
 #contenedor {
-    height: 1100px;
     margin: auto auto;
     background-image: url("../../../assets/background.jpg");
     background-size: cover;
@@ -86,7 +91,6 @@ input[type='checkbox']:checked+label {
     z-index: 1;
     right: 0px;
     background-color: #900c3f;
-
 }
 
 .dropdown-content a {
@@ -116,7 +120,6 @@ input[type='checkbox']:checked+label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 #area_logo {
@@ -124,6 +127,7 @@ input[type='checkbox']:checked+label {
     width: auto;
     height: auto;
 }
+
 
 /* ------------------------------------------ */
 
@@ -166,15 +170,12 @@ input[type='checkbox']:checked+label {
 #boton_selector_sel:hover {
     font-size: 1.2rem;
     color: black;
-
 }
 
 #boton_selector_nosel:hover {
     font-size: 1.2rem;
     color: black;
 }
-
-
 
 #boton_selector_nosel {
     /* border: 1px solid blue; */
@@ -192,7 +193,6 @@ input[type='checkbox']:checked+label {
 #titulo_busca_sonda {
     margin-left: 20px;
     font-size: 18px;
-
 }
 
 #buscador_sonda {
@@ -209,11 +209,9 @@ input[type='checkbox']:checked+label {
 #icono_buscar {
     height: 25px;
     transform: translate(34px, -51px);
-
 }
 
 #area_vmd {
-
     display: flex;
     justify-content: center;
     transform: translate(0px, 310px);
@@ -221,7 +219,6 @@ input[type='checkbox']:checked+label {
 }
 
 #boton_vmd {
-
     border-radius: 5px;
     width: 30%;
     background-color: #900c3f;
