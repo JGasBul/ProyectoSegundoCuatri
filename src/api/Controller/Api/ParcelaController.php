@@ -15,12 +15,7 @@ class ParcelaController extends BaseController
             try {
                 $parcelaModel = new ParcelaModel();
 
-                $intLimit = 10;
-                if (isset($arrQueryStringParams['limit']) && $arrQueryStringParams['limit']) {
-                    $intLimit = $arrQueryStringParams['limit'];
-                }
-
-                $arrParcelas = $parcelaModel->getAllParcelas($intLimit);
+                $arrParcelas = $parcelaModel->getAllParcelas();
                 $responseData = json_encode($arrParcelas);
             } catch (Error $e) {
                 $strErrorDesc = $e->getMessage() . ' Something went wrong! Please contact support.';
@@ -44,6 +39,10 @@ class ParcelaController extends BaseController
             );
         }
     }
+
+    /**
+     * "/parcela/user" Endpoint - Get the parcelas of a specific user
+     */
 
     public function userAction()
     {
@@ -85,6 +84,11 @@ class ParcelaController extends BaseController
             );
         }
     }
+
+    /**
+     * "/parcela/vertices" Endpoint - Get the vertices of a specific parcela
+     */
+
     public function verticesAction()
     {
         $strErrorDesc = '';
@@ -130,6 +134,11 @@ class ParcelaController extends BaseController
             );
         }
     }
+
+    /**
+     * "/parcela/parcela" Endpoint - Get the parcela of a specific id
+     */
+
     public function parcelaAction()
     {
         $strErrorDesc = '';

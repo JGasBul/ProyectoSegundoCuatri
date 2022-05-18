@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-h1{
+h1 {
     font-family: "Montserrat Bold", "Montserrat", sans-serif;
     font-weight: 700;
 }
-p{
+
+p {
     font-family: "Montserrat", "Montserrat", sans-serif;
-    
 }
-#contenedor{
+
+#contenedor {
     height: 720px;
-    margin: auto auto; 
- }
-#cabecera_contenedor{
+    margin: auto auto;
+}
+
+#cabecera_contenedor {
     width: auto;
     height: 70px;
     opacity: 0.78;
@@ -19,43 +21,49 @@ p{
     border-radius: 20px;
     background-color: #ffffff;
     box-sizing: border-box;
-    box-shadow: 5px 5px 5px 0px rgba(121, 121, 121, 0.35); 
+    box-shadow: 5px 5px 5px 0px rgba(121, 121, 121, 0.35);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-#area_logo{
-    justify-content:center;   
+
+#area_logo {
+    justify-content: center;
     width: auto;
     height: auto;
 }
-#area_menu{
+
+#area_menu {
     width: 85%;
     height: auto;
     display: inline-block;
     display: flex;
-    justify-content: flex-end;   
+    justify-content: flex-end;
 }
- #imagen_logo_GTI{
-     width: 160px;
-     height: 70px;
-     box-sizing: border-box;
- }
- #icono_menu{
+
+#imagen_logo_GTI {
+    width: 160px;
+    height: 70px;
+    box-sizing: border-box;
+}
+
+#icono_menu {
     width: 40px;
     height: 40%;
     padding: 2px;
-    transform: translate(-10px, 20px); 
+    transform: translate(-10px, 20px);
     cursor: pointer;
- }
-.titulo-admin{
+}
+
+.titulo-admin {
     display: flex;
     justify-content: center;
     font-size: 40px;
     margin-bottom: 5px;
     margin-top: 8px;
 }
-#barra_busqueda{
+
+#barra_busqueda {
     height: 40px;
     width: 280px;
     padding: 2px 2px 2px 50px;
@@ -67,69 +75,86 @@ p{
     border-bottom: 1px solid black;
     background-color: #f2f2f2;
 }
-#area_busqueda{
+
+#area_busqueda {
     display: flex;
     justify-content: flex-end;
 }
-#icono_busqueda{
+
+#icono_busqueda {
     transform: translate(0px, 2px);
 }
-#boton_buscar{
-    transform: translate(-320px,3px);
+
+#boton_buscar {
+    transform: translate(-320px, 3px);
     background: rgba(0, 0, 0, 0);
     border: 0px solid white;
 }
-#icono_abajo{
+
+#icono_abajo {
     height: 28px;
     width: auto;
-    margin: 0 auto;   
+    margin: 0 auto;
     margin-top: 15px;
 }
-#icono_az{
+
+#icono_az {
     height: 30px;
     margin-top: 30px;
 }
-#boton_anyadir{
+
+#boton_anyadir {
     border: 0px solid white;
     background: rgba(0, 0, 0, 0);
 }
-#boton_eliminar{
+
+#boton_eliminar {
     border: 0px solid white;
     background: rgba(0, 0, 0, 0);
     margin: -30px 0px;
-    cursor: pointer;  
+    cursor: pointer;
 }
-#area_ordenar{
+
+#area_ordenar {
     height: 60px;
     width: 100%;
     display: flex;
 }
-.img{
+
+.img {
     background-color: gray;
 }
+
+
 /* --------------------------------------------------- */
+
+
 /* Aqui empieza la area de datos */
-#contenedor_datos{
-    height: 470px; 
-    transform: translate(0px,5px);
+
+#contenedor_datos {
+    height: 470px;
+    transform: translate(0px, 5px);
 }
-#area_usuario{
+
+#area_usuario {
     /* border: 1px solid blue; */
     height: 80px;
-    display: flex;   
+    display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #f0f0f0;
 }
-#area_usuario-b{
+
+#area_usuario-b {
     /* border: 1px solid blue; */
     height: 80px;
-    display: flex;   
+    display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
 }
-#area_iz{
+
+#area_iz {
     /* border: 1px solid red; */
     width: 80%;
     height: 80px;
@@ -137,48 +162,58 @@ p{
     justify-content: space-around;
     align-items: center;
 }
-#boton_mas_informacion{
+
+#boton_mas_informacion {
     /* border: 1px solid green; */
     margin: auto 0;
     margin-right: 10px;
 }
-#checkbox_seleccionar{
+
+#checkbox_seleccionar {
     height: 25px;
     width: 100px;
 }
-#img_usuario{
-    transform: translate(-20px,0px);
+
+#img_usuario {
+    transform: translate(-20px, 0px);
 }
-#area_datos{
+
+#area_datos {
     width: 60%;
     height: 100%;
 }
-.nombre{
+
+.nombre {
     margin-top: 7px;
     font-size: 22px;
 }
-.tipo{
-    transform: translate(0px,-20px);
+
+.tipo {
+    transform: translate(0px, -20px);
 }
-.Dropdown{ 
+
+.Dropdown {
     position: relative;
     display: inline-block;
 }
-.boton_mas_informacion{
+
+.boton_mas_informacion {
     height: 40px;
     width: 70px;
     background: rgba(0, 0, 0, 0);
     border: 0px solid white;
     margin: 16px;
-    cursor: pointer;  
+    cursor: pointer;
     padding: 2px;
 }
-.area-fila{
+
+.area-fila {
     display: flex;
     justify-content: space-around;
     height: 80px;
 }
-.informacion-content{
+
+.informacion-content {
     display: none;
     position: absolute;
     min-width: 7 00%;
@@ -187,10 +222,11 @@ p{
     right: 0px;
     height: 80px;
     width: 475%;
-    margin: -7px 0px;  
-    background: #f0f0f0;  
+    margin: -7px 0px;
+    background: #f0f0f0;
 }
-.informacion-content-b{
+
+.informacion-content-b {
     display: none;
     position: absolute;
     min-width: 7 00%;
@@ -199,83 +235,101 @@ p{
     right: 0px;
     height: 80px;
     width: 475%;
-    margin: -7px 0px;  
-    background:white; 
+    margin: -7px 0px;
+    background: white;
 }
 
 .Dropdown:hover .informacion-content {
     display: block;
 }
+
 .Dropdown:hover .informacion-content-b {
     display: block;
 }
-.fila{
-    transform: translate(0px,-10px);
+
+.fila {
+    transform: translate(0px, -10px);
     font-family: "Montserrat ", "Montserrat", sans-serif;
     font-weight: 300;
 }
-#area_final{
+
+#area_final {
     display: flex;
-    transform: translate(0px,20px);
+    transform: translate(0px, 20px);
 }
-.linea{
+
+.linea {
     height: 3px;
     background-color: black;
     border-radius: 5px;
     width: 80%;
 }
-#arriba{
+
+#arriba {
     margin: 0 auto;
     background: rgba(0, 0, 0, 0);
     border: 0px solid white;
 }
+
+
 /* --------------------------------------------------- */
+
+
 /* Aqui empieza los estilos de footer */
-#pie_pagina{
+
+#pie_pagina {
     display: flex;
     justify-content: space-around;
-    transform: translate(0%, -100px); 
+    transform: translate(0%, -100px);
 }
-#area_iconos_footer{
+
+#area_iconos_footer {
     display: flex;
     padding: 5px 10px;
     height: -4px;
     width: 200px;
-    justify-content: space-between;   
-}
-.iconoft{
-    height: 30px;
-    padding: 0px 10px;   
+    justify-content: space-between;
 }
 
-.icono-footer{
+.iconoft {
+    height: 30px;
+    padding: 0px 10px;
+}
+
+.icono-footer {
     display: flex;
     padding: 0px 10px;
     align-items: center;
-    width: 30px;  
+    width: 30px;
 }
-#icono-arriba{
+
+#icono-arriba {
     height: 20px;
     display: flex;
     justify-content: flex-end;
-    transform: translate(0px,-20px);  
+    transform: translate(0px, -20px);
 }
-.Icono_Arriba{
+
+.Icono_Arriba {
     height: 25px;
 }
-#contenedor_informacion_footer{
+
+#contenedor_informacion_footer {
     display: flex;
     font-size: 13px;
-    padding: 2px; 
+    padding: 2px;
 }
-.informacion-footer{
+
+.informacion-footer {
     align-content: space-around;
-    padding: 1px;   
+    padding: 1px;
 }
-.dropdown {    
+
+.dropdown {
     position: relative;
     display: inline-block;
 }
+
 .dropbtn {
     margin: 16px;
     border: none;
@@ -285,24 +339,28 @@ p{
     padding: 2px;
     background: rgba(0, 0, 0, 0);
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    right: 0px; 
-    background:rgb(255, 255, 255);
+    right: 0px;
+    background: rgb(255, 255, 255);
 }
+
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
+
 .dropdown-content a:hover {
     background-color: #f1f1f1
 }
+
 .dropdown:hover .dropdown-content {
     display: block;
 }

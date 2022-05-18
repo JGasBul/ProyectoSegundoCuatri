@@ -14,13 +14,69 @@ class UserController extends BaseController
             try {
                 $userModel = new UserModel();
 
-                $intLimit = 10;
-                if (isset($arrQueryStringParams['limit']) && $arrQueryStringParams['limit']) {
-                    $intLimit = $arrQueryStringParams['limit'];
+                $arrUsers = $userModel->getAllUsers();
+                $responseData = json_encode($arrUsers);
+            } catch (Error $e) {
+                $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support.';
+                $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+            }
+        } else {
+            $strErrorDesc = 'Method not supported';
+            $strErrorHeader = 'HTTP/1.1 422 Unprocessable Entity';
+        }
+
+        // send output
+        if (!$strErrorDesc) {
+            $this->sendOutput(
+                $responseData,
+                array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+            );
+        } else {
+            $this->sendOutput(
+                json_encode(array('error' => $strErrorDesc)),
+                array('Content-Type: application/json', $strErrorHeader)
+            );
+        }
+    }
+
+    /**
+     * "/user/insert" Endopoint - Insert user 
+     */
+    public function insertAction()
+    {
+        $strErrorDesc = '';
+        $requestMethod = $_SERVER["REQUEST_METHOD"];
+        if (strtoupper($requestMethod) == 'POST') {
+            try {
+                $userModel = new UserModel();
+
+                if (!empty(trim($_POST["email"])) && !empty(trim($_POST["nombre"])) && !empty(trim($_POST["pass"])) && !empty(trim($_POST["confirm_pass"])) && !empty(trim($_POST["rol"]))) {
+                    $email = trim($_POST["email"]);
+                    try {
+                        $arrUsers = $userModel->getUser($email);
+                        $arrlenght = count($arrUsers);
+                        if ($arrlenght == 1) {
+                            $strErrorDesc = "There is already a user with this email.";
+                            $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+                        }
+                    } catch (Error $e) {
+                        $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support.';
+                        $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+                    }
+                    $nombre = trim($_POST["nombre"]);
+                    $pass = trim($_POST["pass"]);
+                    $pass = password_hash($pass, PASSWORD_DEFAULT);
+                    $rol = trim($_POST["rol"]);
+                } else {
+                    $strErrorDesc = "Please complete all fields.";
+                    $strErrorHeader = "HTTP/1.1 500 Internal Server Error";
                 }
 
-                $arrUsers = $userModel->getAllUsers($intLimit);
-                $responseData = json_encode($arrUsers);
+                if (!$strErrorDesc) {
+                    $insertComplete = $userModel->insertUser($email, $nombre, $pass, $rol);
+                    var_dump($insertComplete);
+                    $responseData = json_encode($insertComplete);
+                }
             } catch (Error $e) {
                 $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support.';
                 $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
@@ -82,7 +138,7 @@ class UserController extends BaseController
                     $param_username = $username;
                     $arrUsers = $userModel->getUser($param_username);
                     $id = $ussername = $passwordValidation = "";
-                    
+
                     //var_dump($arrUsers);
                     // Check if username exists, if yes then verify password
 
