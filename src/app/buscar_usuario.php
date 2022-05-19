@@ -56,7 +56,7 @@ if (empty($busqueda)) {
             <?php
             $curl = curl_init();
 
-            curl_setopt($curl, CURLOPT_URL, "http://localhost/src/api/user.php/buscar?param=" . $busqueda);
+            curl_setopt($curl, CURLOPT_URL, "https://zpasgon.upv.edu.es/src/api/user.php/buscar?param=" . $busqueda);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
             $result = curl_exec($curl);
@@ -181,7 +181,7 @@ if (empty($busqueda)) {
             async function delete_user(name, email) {
                 let text = "Esta seguro que desea eliminar a " + name + " con email " + email;
                 if (confirm(text) == true) {
-                    let consulta = await fetch("http://localhost/src/api/user.php/delete?email=" + email);
+                    let consulta = await fetch("https://zpasgon.upv.edu.es/src/api/user.php/delete?email=" + email);
                     deleteComplete = await consulta.json();
                     if (deleteComplete) {
                         location.reload();

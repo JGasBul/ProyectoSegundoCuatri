@@ -2,7 +2,7 @@ async function cargarDatos() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    let peticion = await fetch('http://localhost/src/api/sonda.php/getMediciones?idSonda=' + urlParams.get('idSonda'));
+    let peticion = await fetch('https://zpasgon.upv.edu.es/src/api/sonda.php/getMediciones?idSonda=' + urlParams.get('idSonda'));
     let mediciones = await peticion.json();
 
     let labels = []; //array de fechas

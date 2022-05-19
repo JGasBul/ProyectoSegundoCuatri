@@ -58,7 +58,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != 1) {
             <?php
             $curl = curl_init();
 
-            curl_setopt($curl, CURLOPT_URL, "http://localhost/src/api/user.php/list");
+            curl_setopt($curl, CURLOPT_URL, "https://zpasgon.upv.edu.es/src/api/user.php/list");
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
             $result = curl_exec($curl);
@@ -183,7 +183,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != 1) {
             async function delete_user(name, email) {
                 let text = "Esta seguro que desea eliminar a " + name + " con email " + email;
                 if (confirm(text) == true) {
-                    let consulta = await fetch("http://localhost/src/api/user.php/delete?email=" + email);
+                    let consulta = await fetch("https://zpasgon.upv.edu.es/src/api/user.php/delete?email=" + email);
                     deleteComplete = await consulta.json();
                     if (deleteComplete) {
                         location.reload();

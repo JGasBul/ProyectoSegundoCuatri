@@ -136,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         curl_setopt($curl, CURLOPT_POST, 1);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($curl, CURLOPT_URL, "http://localhost/src/api/user.php/login");
+        curl_setopt($curl, CURLOPT_URL, "https://zpasgon.upv.edu.es/src/api/user.php/login");
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec($curl);

@@ -46,7 +46,7 @@ function crearMapa() {
 
 async function obtenerParcela(parcela) {
     crearMapa();
-    let consulta = await fetch("http://localhost/src/api/parcela.php/parcela?id=" + parcela);
+    let consulta = await fetch("https://zpasgon.upv.edu.es/src/api/parcela.php/parcela?id=" + parcela);
     parcelas = [];
     parcelas[0] = await consulta.json();
     await crearPoligono(parcelas[0]);
@@ -55,7 +55,7 @@ async function obtenerParcela(parcela) {
 
 async function obtenerParcelasUsuario(usuario) {
     crearMapa();
-    let consulta = await fetch("http://localhost/src/api/parcela.php/user?usuario=" + usuario);
+    let consulta = await fetch("https://zpasgon.upv.edu.es/src/api/parcela.php/user?usuario=" + usuario);
     parcelas = await consulta.json();
     for (let index = 0; index < parcelas.length; index++) {
         await crearPoligono(parcelas, index, usuario);
@@ -84,7 +84,7 @@ async function crearPoligono(parcelas, x, usuario) {
     let parcela = parcelas[x];
     let id = parcela.parcela || parcela.id;
     let titulo = document.getElementById('titulo');
-    let consulta = await fetch("http://localhost/src/api/parcela.php/vertices?parcela=" + id);
+    let consulta = await fetch("https://zpasgon.upv.edu.es/src/api/parcela.php/vertices?parcela=" + id);
     let vertices = await consulta.json();
     parcela.polygon = new google.maps.Polygon({
         paths: vertices,
@@ -134,7 +134,7 @@ async function crearPoligono(parcelas, x, usuario) {
 }
 
 async function crearMarcadores(userID, parcelaID) {
-    let consulta = await fetch("http://localhost/src/api/sonda.php/getMarcadores?user=" + userID + "&parcela=" + parcelaID);
+    let consulta = await fetch("https://zpasgon.upv.edu.es/src/api/sonda.php/getMarcadores?user=" + userID + "&parcela=" + parcelaID);
     sondas = await consulta.json();
     count = 0;
     sondas.forEach(sonda => {
