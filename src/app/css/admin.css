@@ -59,8 +59,6 @@ p {
     display: flex;
     justify-content: center;
     font-size: 40px;
-    margin-bottom: 5px;
-    margin-top: 8px;
 }
 
 #barra_busqueda {
@@ -78,24 +76,21 @@ p {
 
 #area_busqueda {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0px 5px;
+    border-radius: 0px;
 }
 
 #icono_busqueda {
-    transform: translate(0px, 2px);
+    transform: translate(-10px, 2px);
+    cursor: pointer;
 }
 
 #boton_buscar {
     transform: translate(-320px, 3px);
     background: rgba(0, 0, 0, 0);
     border: 0px solid white;
-}
-
-#icono_abajo {
-    height: 28px;
-    width: auto;
-    margin: 0 auto;
-    margin-top: 15px;
 }
 
 #icono_az {
@@ -115,14 +110,10 @@ p {
     cursor: pointer;
 }
 
-#area_ordenar {
-    height: 60px;
-    width: 100%;
-    display: flex;
-}
-
-.img {
-    background-color: gray;
+.boton_borrar {
+    border: 0px solid gray;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
 }
 
 
@@ -132,11 +123,11 @@ p {
 /* Aqui empieza la area de datos */
 
 #contenedor_datos {
-    height: 470px;
-    transform: translate(0px, 5px);
+    height: 370px;
+    margin-top: 20px;
 }
 
-#area_usuario {
+.area_usuario {
     /* border: 1px solid blue; */
     height: 80px;
     display: flex;
@@ -145,21 +136,29 @@ p {
     background-color: #f0f0f0;
 }
 
-#area_usuario-b {
+.area_usuario-b {
     /* border: 1px solid blue; */
     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: #ffffff;
 }
 
-#area_iz {
-    /* border: 1px solid red; */
-    width: 80%;
+.area_iz {
+    width: 60%;
     height: 80px;
+    margin-left: 1rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
+    align-items: center;
+}
+
+.area_der {
+    height: 100%;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -174,11 +173,7 @@ p {
     width: 100px;
 }
 
-#img_usuario {
-    transform: translate(-20px, 0px);
-}
-
-#area_datos {
+.area_datos {
     width: 60%;
     height: 100%;
 }
@@ -190,6 +185,29 @@ p {
 
 .tipo {
     transform: translate(0px, -20px);
+}
+
+.primera_fila {
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.segunda_fila {
+    height: 2rem;
+    align-items: center;
+    display: flex;
+    margin-left: 2.2rem;
+}
+
+.dato_iz {
+    display: flex;
+    align-items: center;
+}
+
+.dato_der {
+    display: flex;
+    align-items: center;
 }
 
 .Dropdown {
@@ -207,21 +225,14 @@ p {
     padding: 2px;
 }
 
-.area-fila {
-    display: flex;
-    justify-content: space-around;
-    height: 80px;
-}
-
 .informacion-content {
     display: none;
     position: absolute;
-    min-width: 7 00%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     right: 0px;
     height: 80px;
-    width: 475%;
+    width: 29.5rem;
     margin: -7px 0px;
     background: #f0f0f0;
 }
@@ -229,14 +240,13 @@ p {
 .informacion-content-b {
     display: none;
     position: absolute;
-    min-width: 7 00%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     right: 0px;
     height: 80px;
-    width: 475%;
+    width: 29.5rem;
     margin: -7px 0px;
-    background: white;
+    background: rgb(255, 255, 255);
 }
 
 .Dropdown:hover .informacion-content {
@@ -255,6 +265,7 @@ p {
 
 #area_final {
     display: flex;
+    justify-content: end;
     transform: translate(0px, 20px);
 }
 
@@ -266,7 +277,6 @@ p {
 }
 
 #arriba {
-    margin: 0 auto;
     background: rgba(0, 0, 0, 0);
     border: 0px solid white;
 }
@@ -280,7 +290,6 @@ p {
 #pie_pagina {
     display: flex;
     justify-content: space-around;
-    transform: translate(0%, -100px);
 }
 
 #area_iconos_footer {

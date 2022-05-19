@@ -50,7 +50,7 @@ class UserController extends BaseController
             try {
                 $userModel = new UserModel();
 
-                if (!empty(trim($_POST["email"])) && !empty(trim($_POST["nombre"])) && !empty(trim($_POST["pass"])) && !empty(trim($_POST["confirm_pass"])) && !empty(trim($_POST["rol"]))) {
+                if (!empty(trim($_POST["email"])) && !empty(trim($_POST["nombre"])) && !empty(trim($_POST["pass"])) && !empty(trim($_POST["empresa"])) && !empty(trim($_POST["rol"]))) {
                     $email = trim($_POST["email"]);
                     try {
                         $arrUsers = $userModel->getUser($email);
@@ -64,6 +64,7 @@ class UserController extends BaseController
                         $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
                     }
                     $nombre = trim($_POST["nombre"]);
+                    $empresa = trim($_POST["empresa"]);
                     $pass = trim($_POST["pass"]);
                     $pass = password_hash($pass, PASSWORD_DEFAULT);
                     $rol = trim($_POST["rol"]);
@@ -73,8 +74,7 @@ class UserController extends BaseController
                 }
 
                 if (!$strErrorDesc) {
-                    $insertComplete = $userModel->insertUser($email, $nombre, $pass, $rol);
-                    var_dump($insertComplete);
+                    $insertComplete = $userModel->insertUser($email, $nombre, $empresa, $pass, $rol);
                     $responseData = json_encode($insertComplete);
                 }
             } catch (Error $e) {
@@ -180,6 +180,96 @@ class UserController extends BaseController
                         $strErrorHeader = "HTTP/1.1 401 Unauthorized";
                     }
                 }
+            } catch (Error $e) {
+                $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support.';
+                $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+            }
+        } else {
+            $strErrorDesc = 'Method not supported';
+            $strErrorHeader = 'HTTP/1.1 422 Unprocessable Entity';
+        }
+
+        // send output
+        if (!$strErrorDesc) {
+            $this->sendOutput(
+                $responseData,
+                array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+            );
+        } else {
+            $this->sendOutput(
+                json_encode(array('error' => $strErrorDesc)),
+                array('Content-Type: application/json', $strErrorHeader)
+            );
+        }
+    }
+
+    /**
+     * "/user/delete" Endpoint - Delete user
+     */
+    public function deleteAction()
+    {
+        $strErrorDesc = '';
+        $requestMethod = $_SERVER["REQUEST_METHOD"];
+        $arrQueryStringParams = $this->getQueryStringParams();
+
+        if (strtoupper($requestMethod) == 'GET') {
+            try {
+                $userModel = new UserModel();
+
+                if (isset($arrQueryStringParams['email']) && $arrQueryStringParams['email']) {
+                    $email = $arrQueryStringParams['email'];
+                } else {
+                    $strErrorDesc = 'Introduzca el email del usuario que se va a borrar';
+                    $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+                }
+
+                $deleteComplete = $userModel->deleteUser($email);
+                $responseData = json_encode($deleteComplete);
+            } catch (Error $e) {
+                $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support.';
+                $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+            }
+        } else {
+            $strErrorDesc = 'Method not supported';
+            $strErrorHeader = 'HTTP/1.1 422 Unprocessable Entity';
+        }
+
+        // send output
+        if (!$strErrorDesc) {
+            $this->sendOutput(
+                $responseData,
+                array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+            );
+        } else {
+            $this->sendOutput(
+                json_encode(array('error' => $strErrorDesc)),
+                array('Content-Type: application/json', $strErrorHeader)
+            );
+        }
+    }
+    /**
+     * "/user/delete" Endpoint - Delete user
+     */
+    public function buscarAction()
+    {
+        $strErrorDesc = '';
+        $requestMethod = $_SERVER["REQUEST_METHOD"];
+        $arrQueryStringParams = $this->getQueryStringParams();
+
+        if (strtoupper($requestMethod) == 'GET') {
+            try {
+                $userModel = new UserModel();
+
+                if (isset($arrQueryStringParams['param']) && $arrQueryStringParams['param']) {
+                    $param = $arrQueryStringParams['param'];
+                    $param = "%" . $param . "%";
+                } else {
+                    $strErrorDesc = 'Introduzca el email del usuario que se va a borrar';
+                    $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+                }
+
+                $buscar = $userModel->buscarUser($param);
+                $responseData = json_encode($buscar);
             } catch (Error $e) {
                 $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support.';
                 $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
