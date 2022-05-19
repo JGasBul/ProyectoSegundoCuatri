@@ -3,12 +3,12 @@
 session_start();
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == 1) {
     if ($_SESSION["rol"] == "normal") {
         header("location: parcelas.html?usuario=" . $_SESSION["id"]);
         exit;
     } else {
-        header("location: admin.html");
+        header("location: admin.php");
         exit;
     }
 }
@@ -156,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($_SESSION["rol"] == "normal") {
                 header("location: parcelas.html?usuario=" . $_SESSION["id"]);
             } else {
-                header("location: admin.html");
+                header("location: admin.php");
             }
         }
     }

@@ -15,8 +15,17 @@ class UserModel extends Database
         return $this->select("SELECT * FROM usuarios WHERE email LIKE ?", ["s", &$user]);
     }
 
-    public function insertUser($email, $nombre, $pass, $rol)
+    public function insertUser($email, $nombre, $empresa, $pass, $rol)
     {
-        return $this->insert("INSERT INTO usuarios (email, nombre, password, rol) VALUES (?, ?, ?, ?)", ["s", &$email, &$nombre, &$pass, &$rol]);
+        return $this->insert("INSERT INTO usuarios (email, nombre, empresa ,password, rol) VALUES (?, ?, ?, ?, ?)", ["s", &$email, &$nombre, &$empresa, &$pass, &$rol]);
+    }
+
+    public function deleteUser($email)
+    {
+        return $this->insert("DELETE FROM usuarios WHERE  email LIKE ?", ["s", &$email]);
+    }
+    public function buscarUser($param)
+    {
+        return $this->select("SELECT * FROM usuarios WHERE email LIKE ? OR nombre LIKE ? OR empresa LIKE ? OR rol LIKE ?", ["s", &$param, &$param, &$param, &$param]);
     }
 }

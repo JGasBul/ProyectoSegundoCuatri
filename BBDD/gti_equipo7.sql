@@ -343,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `sondas` (
   CONSTRAINT `FK2_sonda_usuario` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Volcando datos para la tabla gti_equipo7.sondas: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla gti_equipo7.sondas: ~5 rows (aproximadamente)
 DELETE FROM `sondas`;
 /*!40000 ALTER TABLE `sondas` DISABLE KEYS */;
 INSERT INTO `sondas` (`id`, `usuario`, `parcela`) VALUES
@@ -363,19 +363,20 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(60) NOT NULL,
   `nombre` varchar(60) NOT NULL,
+  `empresa` varchar(60) NOT NULL,
   `password` varchar(60) NOT NULL,
   `rol` enum('admin','normal') NOT NULL,
+  `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla gti_equipo7.usuarios: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla gti_equipo7.usuarios: ~2 rows (aproximadamente)
 DELETE FROM `usuarios`;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` (`id`, `email`, `nombre`, `password`, `rol`) VALUES
-	(1, 'propietario1@gmail.com', 'propietario1', '1234', 'normal'),
-	(2, 'propietario2@gmail.com', 'propietario2', '1234', 'normal'),
-	(3, 'admin@gmail.com', 'admin', 'admin', 'admin'),
-	(5, 'pepe@gmail.com', 'pepe', '$2y$10$y6nFZ73YVoi1aOXb/NebkuFVDXpY9HFw/gY2M4yTZ7G1J7zreQr7u', 'admin');
+INSERT INTO `usuarios` (`id`, `email`, `nombre`, `empresa`, `password`, `rol`, `fecha_creacion`) VALUES
+	(1, 'propietario1@gmail.com', 'Zaida Pastor Gonzalez', 'Frutacsa', '1234', 'normal', '2021-05-19 17:00:00'),
+	(2, 'propietario2@gmail.com', 'Arnau Soler Tomás', 'CampoCaliente', '1234', 'normal', '2020-04-19 16:00:00'),
+	(3, 'admin@gmail.com', 'Pepe Gascó Bule', 'Administración', 'admin', 'admin', '2019-03-19 15:00:00');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gti_equipo7.usuarios_parcelas
