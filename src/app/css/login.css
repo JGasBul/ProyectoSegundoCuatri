@@ -1,34 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/*--------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------*/
+/*Inicio Variables*/
+:root{
+    --texto:#111111; /*Color del texto*/
+    --principal:#FFFFFF; /*Color principal de nuestra web*/
+    --secundario:#000000; /*Color secundario de nuestra web*/
+    /*Botones*/
+    --boton-fondo:#900c3f;
+    --boton-texto:#FFFFFF;
+    /*Imagenes*/
+    --imagen-fondo:rgba(215, 215, 215, 0.27);
+}
+/*Fin Variables*/
+/*---------------------------------------------------------------------------------------------------------*/
+html{
+    font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
+    font-size: 15px; /*Esto ha definido el rem --> 1rem = 15px*/
+}
 
+/*Inicio body*/
+body {
+    background: url("../../assets/fondo-login.jpeg") no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/*Fin body*/
+/*---------------------------------------------------------------------------------------------------------*/
+/*Inicio header*/
+.encabezado{
+    background: var(--principal);
+    color: var(--texto);
+    border: 1px solid black;
+    border-top: none;
+    border-radius: 5px;
+    height: 17vh;
+}
+
+.contenedor-boton-login-menu{
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+}
+.contenedor-boton-login-menu>nav>div>ul{
+    justify-content: stretch;
+}
+/*aqui empieza el logo*/
+.encabezado>.logo>img{
+    width:150px;
+    height: auto;
+}
+/*aqui empieza el boton-login*/
+#boton-login{
+    background: var(--imagen-fondo);
+    border-radius: 90%;
+}
+#boton-login>a{
+    color: var(--boton-texto);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+/*Inicio Menu*/
+.nav-item{
+    background: var(--boton-fondo);
+    border-radius: 5px;
+    margin: 0.5rem;
+    width: 10rem;
+    text-align: center;
+}
+.nav-item>a{
+    color: var(--boton-texto);
+}
+.contenedor-boton-login-menu>nav>div>ul>li{
+    padding: 1rem;
+}
+
+.contenedor-boton-login-menu>nav>div>ul>li{
+    align-self: center;
+}
+.bg-light {
+    background-color: transparent!important;
+}
+/*Fin Menu*/
+/*Fin header*/
+/*---------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------*/
 
 /*Inicio mobile-first*/
 
-.mobile-first {
+.container {
     padding: 1em;
     margin: 2em auto;
     max-width: 750px;
 }
 
-
-/*mobile-first*/
-
-
 /*Para un dispositivo cuya anchura minima sea 600px*/
 
 @media (min-width: 600px) {
-    .mobile-first [class="contenedor-login"] {
+    .container [class="contenedor-login"] {
         display: flex;
         justify-content: space-between;
     }
 
-    .mobile-first [class="form"] {
+    .container [class="form"] {
         width: 30%;
     }
 }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 3) {}
 
 
 /*Fin mobile-first*/
@@ -40,21 +120,7 @@
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 
-/*Inicio body*/
 
-body {
-    box-sizing: border-box;
-    background-image: url("../../assets/fondo-login.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-
-/*Fin body*/
 
 
 /*--------------------------------------------------------------------------------------------------------------------*/
@@ -189,7 +255,7 @@ nav {
     width: 80px;
     height: 79px;
     /*Fondo*/
-    background: white;
+    background-image: linear-gradient(to right bottom, transparent, white 10%);
     border-radius: 90px;
     /*Alineación*/
     margin: auto 40%;
@@ -226,7 +292,7 @@ div [class=contenedor-login] {
     margin: 0 auto;
     /*La primera medida, hace referencia a la distancia por arriba y por abajo; y la segunda, por derecha e izquierda */
     justify-content: center;
-    background-color: white;
+    background-color: var(--boton-texto);
     padding: 20px 20px;
 }
 
@@ -266,8 +332,8 @@ input {
 
 .contenido-contraseña {
     display: flex;
-    flex-direction: row;
     margin-top: 20px;
+    align-items: center;
 }
 
 .contenido-contraseña-interior {
@@ -275,45 +341,29 @@ input {
     flex-direction: column;
 }
 
+    /*Inicio Tamaño, Color, Fuente*/
+    .contenido-contraseña-interior,.contenido-email-interior{
+    font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
+    color: var(--texto);
+    /*Fin Tamaño, Color, Fuente*/
+    text-align: left;
+    line-height: normal;
+    }
 
 /*Fin contenido del email y contenido de contraseña*/
 
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
-
 /*Inicio input de Email y Contraseña*/
-
-input[type="email-"],
-input[type="contraseña-"] {
+input[id="email"],
+input[id="password"] {
     border: black 1px solid;
     width: 200px;
     /*Limita los inputs y los elementos del form a una anchura de 200px*/
 }
 
-input[type="email-"]:focus,
-
-/*El pseudoelemento de focus nos permite que, si hacemos click fuera del campo,*/
-
-input[type="contraseña-"]:focus {
-    /*este se desseleccionará*/
-}
-
-.email-mobile,
-.contraseña-mobile {
-    /*Inicio Tamaño, Color, Fuente*/
-    width: 33px;
-    height: 15px;
-    font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
-    color: #333333;
-    /*Fin Tamaño, Color, Fuente*/
-    text-align: left;
-    line-height: normal;
-}
-
-
 /*Fin input de Email y Contraseña*/
-
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
@@ -347,11 +397,10 @@ input[type="contraseña-"]:focus {
 
 /*Inicio clase Mostrar-Ocultar-Contraseña*/
 
-.ojo-cerrado {
+.ojo {
     width: 30px;
     height: 20px;
-    margin-top: 24px;
-    margin-left: 15px;
+    margin-left: .5rem;
 }
 
 
@@ -379,22 +428,28 @@ input[type="submit"] {
 
 /*Fin Enviar*/
 
+#recordarPassword,#recordarPassword>a{
+    color: var(--texto);
+    font-style: italic;
+}
+#recordarPassword>a{
+    font-weight: bold;
+}
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 
-/*Inicio class="error"*/
+/*Inicio id="error"*/
 
-#error-mobile,
-#error-desktop {
+#error{
     /*Inicio Tamaño-Color*/
     background-color: rgba(170, 170, 170, 0.16);
-    height: auto;
+    width: 20rem;
+    margin:0 auto;
     color: black;
     /*Fin Tamaño-Color*/
     /*Inicio Alineacion*/
     text-align: center;
-    font-family: "Montserrat Bold", "Montserrat Regular", "Montserrat", sans-serif;
     font-weight: bold;
     padding: 5px;
     /*Inicio Alineacion*/
@@ -411,7 +466,21 @@ body {
 }
 
 
-/*Fin class="error"*/
+/*Fin id="error"*/
 
 
-/*--------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------*/
+/*Inicio media querys*/
+/*Nota importante: Muchas media querys vienen ya de serie con la libreria de Bootstrap 4.6.0*/
+@media (max-width: 992px) {
+    .contenido{
+        margin-top: 9rem;
+    }
+    .contenedor-boton-login-menu>nav>div>ul{
+        position: absolute;
+        right: 0;
+        display: block;
+    }
+}
+/*Fin media querys*/

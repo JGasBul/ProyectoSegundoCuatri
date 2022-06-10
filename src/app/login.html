@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- link bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+</head>
+<body>
+    <div class="container-lg">
+    <!-- Inicio header -->
+    <header class="encabezado navbar fixed-top" role="banner">
+            <!-- aqui va el logo -->
+            <a href="../index.html" class="logo">
+                <img src="../assets/logo.svg" alt="logo del sitio">
+            </a>
+            <div class="contenedor-boton-login-menu">
+                <!-- aqui va el login-->
+                <button id="boton-login"><a href="login.html"><img src="../assets/user.svg" alt="login"></a></button>
+                <!-- aqui va el menu de la pagina -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                        <span><img src="../assets/menu.svg" alt="imagen_menu"></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="menuPrincipal">
+                        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                            <li class="nav-item">
+                                <a href="Pagina_Sobre_Nosotros.html">Sobre Nosotros</a>
+                            </li>
+                            <li class="nav-item active"><a href="catalogo.html">Catálogo</a></li>
+                            <li class="nav-item"><a href="servicios.html">Servicios</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- aqui termina el menu de la pagina-->
+            </div>
+    </header>
+        <!-- Fin header -->
+    <!--Inicio Mobile First-->
+    <div class="container">
+        <!--Imagen de Cuenta-->
+        <img src="../assets/account.svg" alt="icono de Cuenta02" class="account">
+        <!--Creamos un contenedor que contendrá el formulario de login y el cuadro de error-->
+        <!--Inicio Contenedor-Login-->
+        <div class="contenedor-login">
+            <!--Inicio del formulario-->
+            <!-- action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"-->
+             <form onsubmit="enviarLogin(event)"> 
+                <!--Inicio Email-->
+                <div class="contenido-email">
+                    <img src="../assets/icon01.svg" alt="icono de Email" class="email-icon">
+                    <div class="contenido-email-interior">
+                        <label for="email">Email:</label>
+                        <input id="email" name="email" placeholder="Ponga su email" type="email" required>
+                    </div>
+                </div>
+                <!--Fin Email-->
+                <!--Inicio Contraseña-->
+                <div class="contenido-contraseña">
+                    <img src="../assets/icon02.svg" alt="icono de candado" class="lock-icon">
+                    <div class="contenido-contraseña-interior">
+                        <label for="password">Contraseña:</label>
+                        <input id="password" name="password" placeholder="Ponga su contraseña" type="password" required>
+                    </div>
+                    <!--Inicio MostrarOcultar Contraseña-->
+                    <section class="Mostrar-Ocultar-Contraseña">
+                        <div class="ojo" onclick="MostrarOcultarPassword()">
+                            <img class="ojo" src="../assets/ojo_abierto_desactivado.svg" alt="icono ocultar contraseña">
+                        </div>
+                    </section>
+                    <!--Fin MostrarOcultar Contraseña-->
+                </div>
+                <p id="recordarPassword">¿Olvidaste la contraseña?<a href="contactanos.html">Ponte en contacto</a></p>
+                <!--Fin Contraseña-->
+                <input type="submit" value="ENVIAR">
+            </form>
+            <!--Fin del formulario-->
+            <!--Si los datos dan error, se mostrará dentro del contenedor que los datos son incorrectos-->
+            <div id="error" class="row">
+                <p class="col-xs-12 col-lg-6">Datos incorrectos</p>
+                <p class="d-none d-lg-block col-lg-6">Usuario o contraseña incorrectos</p>
+            </div>
+        </div>
+        <!--Fin Contenedor-Login-->
+    </div>
+    <!--Fin Mobile First-->
+    </div>
+</body>
+<script src="js/login.js"></script>
+</html>
