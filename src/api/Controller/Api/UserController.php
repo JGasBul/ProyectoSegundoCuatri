@@ -40,6 +40,51 @@ class UserController extends BaseController
     }
 
     /**
+     * "/user/list" Endpoint - Get list of users
+     */
+    public function getAction()
+    {
+        $strErrorDesc = '';
+        $requestMethod = $_SERVER["REQUEST_METHOD"];
+        $arrQueryStringParams = $this->getQueryStringParams();
+
+        if (strtoupper($requestMethod) == 'GET') {
+            try {
+                $userModel = new UserModel();
+
+                if (isset($arrQueryStringParams['email']) && $arrQueryStringParams['email']) {
+                    $email = $arrQueryStringParams['email'];
+                } else {
+                    $strErrorDesc = 'Introduzca el email del usuario que se va a obtener';
+                    $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+                }
+
+                $arrUsers = $userModel->getUser($email);
+                $responseData = json_encode($arrUsers);
+            } catch (Error $e) {
+                $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support.';
+                $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+            }
+        } else {
+            $strErrorDesc = 'Method not supported';
+            $strErrorHeader = 'HTTP/1.1 422 Unprocessable Entity';
+        }
+
+        // send output
+        if (!$strErrorDesc) {
+            $this->sendOutput(
+                $responseData,
+                array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+            );
+        } else {
+            $this->sendOutput(
+                json_encode(array('error' => $strErrorDesc)),
+                array('Content-Type: application/json', $strErrorHeader)
+            );
+        }
+    }
+
+    /**
      * "/user/insert" Endopoint - Insert user 
      */
     public function insertAction()
@@ -247,8 +292,82 @@ class UserController extends BaseController
             );
         }
     }
+
     /**
-     * "/user/delete" Endpoint - Delete user
+     * "/user/edit" Endopoint - Edit user 
+     */
+    public function editAction()
+    {
+        $strErrorDesc = '';
+        $requestMethod = $_SERVER["REQUEST_METHOD"];
+        if (strtoupper($requestMethod) == 'POST') {
+            try {
+                $userModel = new UserModel();
+
+                if (!empty(trim($_POST["email_old"])) && !empty(trim($_POST["email"])) && !empty(trim($_POST["nombre"]))  && !empty(trim($_POST["empresa"])) && !empty(trim($_POST["rol"]))) {
+                    $email_old = trim($_POST["email_old"]);
+                    $email = trim($_POST["email"]);
+                    $nombre = trim($_POST["nombre"]);
+                    $empresa = trim($_POST["empresa"]);
+                    $rol = trim($_POST["rol"]);
+
+                    try {
+                        $arrUsers = $userModel->getUser($email_old);
+
+                        foreach ($arrUsers as $usser) {
+                            foreach ($usser as $key => $value) {
+                                if ($key == "id") {
+                                    $id = $value;
+                                }
+                                if ($key == "password") {
+                                    if (!empty(trim($_POST["pass"]))) {
+
+                                        $pass = trim($_POST["pass"]);
+                                        $pass = password_hash($pass, PASSWORD_DEFAULT);
+                                    } else {
+                                        $pass = $value;
+                                    }
+                                }
+                            }
+                        }
+                    } catch (Error $e) {
+                        $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support.';
+                        $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+                    }
+                } else {
+                    $strErrorDesc = "Please complete all fields.";
+                    $strErrorHeader = "HTTP/1.1 500 Internal Server Error";
+                }
+
+                if (!$strErrorDesc) {
+                    $editComplete = $userModel->editUser($email, $nombre, $empresa, $pass, $rol, $id);
+                    $responseData = json_encode($editComplete);
+                }
+            } catch (Error $e) {
+                $strErrorDesc = $e->getMessage() . 'Something went wrong! Please contact support.';
+                $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+            }
+        } else {
+            $strErrorDesc = 'Method not supported';
+            $strErrorHeader = 'HTTP/1.1 422 Unprocessable Entity';
+        }
+
+        // send output
+        if (!$strErrorDesc) {
+            $this->sendOutput(
+                $responseData,
+                array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+            );
+        } else {
+            $this->sendOutput(
+                json_encode(array('error' => $strErrorDesc)),
+                array('Content-Type: application/json', $strErrorHeader)
+            );
+        }
+    }
+
+    /**
+     * "/user/buscar" Endpoint - Buscar user
      */
     public function buscarAction()
     {

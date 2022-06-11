@@ -1,3 +1,13 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != 1) {
+    header("location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es" style="min-height: 100%">
 
@@ -14,6 +24,10 @@
         <div class="logo">
             <a href="../index.html"><img src="../assets/logo.svg" alt="logo_empresa" width="150" /></a>
         </div>
+
+        <div class="dropdown">
+            <a class="dropbtn" href="./logout.php"><img src="../assets/cerrar_sesion.png" alt="Boton de cerrar sesion"></a>
+        </div>
     </header>
     <!--Fin Cabecera-->
     <!--Inicio Contenido-->
@@ -26,35 +40,43 @@
         <!--Inicio Formulario-->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <!--Nombre-->
+            <?php
+            $nombre = $_GET['nombre'];
+            $nombre = explode(" ", $nombre);
+
+            $primer_nombre = $nombre[0]; // porción1
+            $apellido = $nombre[1]; // porción2
+            ?>
             <div>
                 <img src="../assets/importante.svg" alt="importante">
                 <label for="nombre">Nombre</label>
             </div>
-            <input id="nombre" name="nombre" placeholder="Introduzca el nombre de usuario" type="text" required>
+            <input id="nombre" name="nombre" placeholder="Introduzca el nombre de usuario" type="text" value="<?php echo $primer_nombre ?>" required>
             <!--Apellidos-->
             <div>
                 <img src="../assets/importante.svg" alt="importante">
                 <label for="apellidos">Apellidos</label>
             </div>
-            <input id="apellidos" name="apellidos" placeholder="Introduzca el apellido" type="text" required>
+            <input id="apellidos" name="apellidos" placeholder="Introduzca el apellido" type="text" value="<?php echo $apellido ?>" required>
             <!--E-mail-->
             <div>
                 <img src="../assets/importante.svg" alt="importante">
                 <label for="email">E-mail</label>
             </div>
-            <input id="email" name="email" placeholder="Introduzca el e-mail del usuario" type="email" required>
+            <input id="email" name="email" placeholder="Introduzca el e-mail del usuario" type="email" value="<?php echo $_GET['email'] ?>" required>
+            <input id="email_old" name="email_old" type="hidden" value="<?php echo $_GET['email'] ?>">
             <!--Empresa-->
             <div>
                 <img src="../assets/importante.svg" alt="importante">
                 <label for="empresa">Empresa</label>
             </div>
-            <input id="empresa" name="empresa" placeholder="Introduzca la empresa del usuario" type="texts" required>
+            <input id="empresa" name="empresa" placeholder="Introduzca la empresa del usuario" type="texts" value="<?php echo $_GET['empresa'] ?>" required>
             <!--Contraseña-->
             <div>
-                <img src="../assets/importante.svg" alt="importante">
+                <!--<img src="../assets/importante.svg" alt="importante">-->
                 <label for="pass">Contraseña</label>
             </div>
-            <input id="pass" name="pass" placeholder="Introduzca la contraseña deseada" type="password" required>
+            <input id="pass" name="pass" placeholder="Introduzca la contraseña deseada" type="password">
             <!--Rol-->
             <div>
                 <img src="../assets/importante.svg" alt="importante">
@@ -62,8 +84,12 @@
             </div>
             <select name="selector-rol" id="selector-rol">
                 <option>Seleccione una opción</option>
-                <option>Administrador</option>
-                <option>Usuario</option>
+                <option <?php if ($_GET['rol'] == "admin") {
+                            echo "selected";
+                        } ?>>Administrador</option>
+                <option <?php if ($_GET['rol'] == "normal") {
+                            echo "selected";
+                        } ?>>Usuario</option>
             </select>
             <label id="aviso-asunto">Elija una opción</label>
             <!--Botón Enviar-->
@@ -85,6 +111,7 @@ $login_err = $rol_err = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["nombre"]) . ' ' . trim($_POST["apellidos"]);
     $email = trim($_POST["email"]);
+    $email_old = trim($_POST["email_old"]);
     $empresa = trim($_POST["empresa"]);
     $password = trim($_POST["pass"]);
     $rol = trim($_POST['selector-rol']);
@@ -104,19 +131,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!$rol_err) {
         echo "<script> document.getElementById('aviso-asunto').style.visibility = 'hidden'; </script>";
 
-        $data = array("email" => $email, "pass" => $password, "nombre" => $username, "empresa" => $empresa, "rol" => $rol);
+        $data = array("email_old" => $email_old, "email" => $email, "pass" => $password, "nombre" => $username, "empresa" => $empresa, "rol" => $rol);
+        var_dump($data);
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_POST, 1);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($curl, CURLOPT_URL, "http://localhost/src/api/user.php/insert");
+        curl_setopt($curl, CURLOPT_URL, "http://localhost/src/api/user.php/edit");
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec($curl);
         $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
+        var_dump($result);
+        var_dump($http_code);
         if ($http_code == 200) {
-            echo "<script>alert(\"Usuario insertado con exito\")</script>";
+            echo "<script>alert(\"Usuario editado con exito\"); window.location.href='./admin.php';</script>";
         } else {
             $result = json_decode($result);
             if ($result->error == "There is already a user with this email.") {
