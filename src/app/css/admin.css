@@ -116,6 +116,13 @@ p {
     cursor: pointer;
 }
 
+.boton_editar {
+    border: 0px solid gray;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    width: 50px;
+}
+
 
 /* --------------------------------------------------- */
 

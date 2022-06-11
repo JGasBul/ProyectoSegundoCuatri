@@ -13,7 +13,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 -- Volcando estructura para tabla gti_equipo7.mediciones_sonda
-DROP TABLE IF EXISTS `mediciones_sonda`;
 CREATE TABLE IF NOT EXISTS `mediciones_sonda` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_sonda` int(11) NOT NULL,
@@ -23,9 +22,9 @@ CREATE TABLE IF NOT EXISTS `mediciones_sonda` (
   PRIMARY KEY (`id`),
   KEY `medicion_sonda` (`id_sonda`),
   CONSTRAINT `medicion_sonda` FOREIGN KEY (`id_sonda`) REFERENCES `sondas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=387 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Volcando datos para la tabla gti_equipo7.mediciones_sonda: ~255 rows (aproximadamente)
+-- Volcando datos para la tabla gti_equipo7.mediciones_sonda: ~383 rows (aproximadamente)
 DELETE FROM `mediciones_sonda`;
 /*!40000 ALTER TABLE `mediciones_sonda` DISABLE KEYS */;
 INSERT INTO `mediciones_sonda` (`id`, `id_sonda`, `sensor`, `medicion`, `hora`) VALUES
@@ -283,11 +282,138 @@ INSERT INTO `mediciones_sonda` (`id`, `id_sonda`, `sensor`, `medicion`, `hora`) 
 	(255, 6, 'Salinidad', 7, '2022-05-18 19:00:00'),
 	(256, 7, 'Salinidad', 7, '2022-05-18 19:00:00'),
 	(257, 8, 'Salinidad', 7, '2022-05-18 19:00:00'),
-	(258, 9, 'Salinidad', 7, '2022-05-18 19:00:00');
+	(258, 9, 'Salinidad', 7, '2022-05-18 19:00:00'),
+	(259, 10, 'Salinidad', 7, '2022-05-18 19:00:00'),
+	(260, 10, 'Humedad', 35, '2022-05-18 14:00:00'),
+	(261, 10, 'Luz', 45, '2022-05-18 18:00:00'),
+	(262, 10, 'Luz', 23, '2022-05-18 17:00:00'),
+	(263, 10, 'Luz', 46, '2022-05-18 16:00:00'),
+	(264, 10, 'Luz', 75, '2022-05-18 15:00:00'),
+	(265, 10, 'Luz', 0, '2022-05-18 14:00:00'),
+	(266, 10, 'Luz', 10, '2022-05-18 13:00:00'),
+	(267, 10, 'Luz', 25, '2022-05-18 12:00:00'),
+	(268, 10, 'Salinidad', 23, '2022-05-18 17:00:00'),
+	(269, 10, 'Salinidad', 45, '2022-05-18 16:00:00'),
+	(270, 10, 'Salinidad', 98, '2022-05-18 15:00:00'),
+	(271, 10, 'Salinidad', 87, '2022-05-18 14:00:00'),
+	(272, 10, 'Salinidad', 67, '2022-05-18 13:00:00'),
+	(273, 10, 'Salinidad', 25, '2022-05-18 12:00:00'),
+	(274, 10, 'Humedad', 50, '2022-05-18 13:00:00'),
+	(275, 10, 'Humedad', 20, '2022-05-18 12:00:00'),
+	(276, 10, 'Temperatura', 35, '2022-05-18 12:00:00'),
+	(277, 10, 'Humedad', 60, '2022-05-18 19:00:00'),
+	(278, 10, 'Luz', 67, '2022-05-18 19:00:00'),
+	(279, 10, 'Salinidad', 12, '2022-05-18 18:00:00'),
+	(280, 10, 'Temperatura', 35, '2022-05-18 19:00:00'),
+	(281, 10, 'Temperatura', 45, '2022-05-18 18:00:00'),
+	(282, 10, 'Temperatura', 25, '2022-05-18 17:00:00'),
+	(283, 10, 'Temperatura', 32, '2022-05-18 16:00:00'),
+	(284, 10, 'Temperatura', 16, '2022-05-18 15:00:00'),
+	(285, 10, 'Humedad', 60, '2022-05-18 15:00:00'),
+	(286, 10, 'Humedad', 30, '2022-05-18 16:00:00'),
+	(287, 10, 'Humedad', 25, '2022-05-18 17:00:00'),
+	(288, 10, 'Humedad', 10, '2022-05-18 18:00:00'),
+	(289, 10, 'Temperatura', 10, '2022-05-18 13:00:00'),
+	(290, 10, 'Temperatura', 17, '2022-05-18 14:00:00'),
+	(291, 11, 'Salinidad', 7, '2022-05-18 19:00:00'),
+	(292, 11, 'Humedad', 35, '2022-05-18 14:00:00'),
+	(293, 11, 'Luz', 45, '2022-05-18 18:00:00'),
+	(294, 11, 'Luz', 23, '2022-05-18 17:00:00'),
+	(295, 11, 'Luz', 46, '2022-05-18 16:00:00'),
+	(296, 11, 'Luz', 75, '2022-05-18 15:00:00'),
+	(297, 11, 'Luz', 0, '2022-05-18 14:00:00'),
+	(298, 11, 'Luz', 10, '2022-05-18 13:00:00'),
+	(299, 11, 'Luz', 25, '2022-05-18 12:00:00'),
+	(300, 11, 'Salinidad', 23, '2022-05-18 17:00:00'),
+	(301, 11, 'Salinidad', 45, '2022-05-18 16:00:00'),
+	(302, 11, 'Salinidad', 98, '2022-05-18 15:00:00'),
+	(303, 11, 'Salinidad', 87, '2022-05-18 14:00:00'),
+	(304, 11, 'Salinidad', 67, '2022-05-18 13:00:00'),
+	(305, 11, 'Salinidad', 25, '2022-05-18 12:00:00'),
+	(306, 11, 'Humedad', 50, '2022-05-18 13:00:00'),
+	(307, 11, 'Humedad', 20, '2022-05-18 12:00:00'),
+	(308, 11, 'Temperatura', 35, '2022-05-18 12:00:00'),
+	(309, 11, 'Humedad', 60, '2022-05-18 19:00:00'),
+	(310, 11, 'Luz', 67, '2022-05-18 19:00:00'),
+	(311, 11, 'Salinidad', 12, '2022-05-18 18:00:00'),
+	(312, 11, 'Temperatura', 35, '2022-05-18 19:00:00'),
+	(313, 11, 'Temperatura', 45, '2022-05-18 18:00:00'),
+	(314, 11, 'Temperatura', 25, '2022-05-18 17:00:00'),
+	(315, 11, 'Temperatura', 32, '2022-05-18 16:00:00'),
+	(316, 11, 'Temperatura', 16, '2022-05-18 15:00:00'),
+	(317, 11, 'Humedad', 60, '2022-05-18 15:00:00'),
+	(318, 11, 'Humedad', 30, '2022-05-18 16:00:00'),
+	(319, 11, 'Humedad', 25, '2022-05-18 17:00:00'),
+	(320, 11, 'Humedad', 10, '2022-05-18 18:00:00'),
+	(321, 11, 'Temperatura', 10, '2022-05-18 13:00:00'),
+	(322, 11, 'Temperatura', 17, '2022-05-18 14:00:00'),
+	(323, 12, 'Salinidad', 7, '2022-05-18 19:00:00'),
+	(324, 12, 'Humedad', 35, '2022-05-18 14:00:00'),
+	(325, 12, 'Luz', 45, '2022-05-18 18:00:00'),
+	(326, 12, 'Luz', 23, '2022-05-18 17:00:00'),
+	(327, 12, 'Luz', 46, '2022-05-18 16:00:00'),
+	(328, 12, 'Luz', 75, '2022-05-18 15:00:00'),
+	(329, 12, 'Luz', 0, '2022-05-18 14:00:00'),
+	(330, 12, 'Luz', 10, '2022-05-18 13:00:00'),
+	(331, 12, 'Luz', 25, '2022-05-18 12:00:00'),
+	(332, 12, 'Salinidad', 23, '2022-05-18 17:00:00'),
+	(333, 12, 'Salinidad', 45, '2022-05-18 16:00:00'),
+	(334, 12, 'Salinidad', 98, '2022-05-18 15:00:00'),
+	(335, 12, 'Salinidad', 87, '2022-05-18 14:00:00'),
+	(336, 12, 'Salinidad', 67, '2022-05-18 13:00:00'),
+	(337, 12, 'Salinidad', 25, '2022-05-18 12:00:00'),
+	(338, 12, 'Humedad', 50, '2022-05-18 13:00:00'),
+	(339, 12, 'Humedad', 20, '2022-05-18 12:00:00'),
+	(340, 12, 'Temperatura', 35, '2022-05-18 12:00:00'),
+	(341, 12, 'Humedad', 60, '2022-05-18 19:00:00'),
+	(342, 12, 'Luz', 67, '2022-05-18 19:00:00'),
+	(343, 12, 'Salinidad', 12, '2022-05-18 18:00:00'),
+	(344, 12, 'Temperatura', 35, '2022-05-18 19:00:00'),
+	(345, 12, 'Temperatura', 45, '2022-05-18 18:00:00'),
+	(346, 12, 'Temperatura', 25, '2022-05-18 17:00:00'),
+	(347, 12, 'Temperatura', 32, '2022-05-18 16:00:00'),
+	(348, 12, 'Temperatura', 16, '2022-05-18 15:00:00'),
+	(349, 12, 'Humedad', 60, '2022-05-18 15:00:00'),
+	(350, 12, 'Humedad', 30, '2022-05-18 16:00:00'),
+	(351, 12, 'Humedad', 25, '2022-05-18 17:00:00'),
+	(352, 12, 'Humedad', 10, '2022-05-18 18:00:00'),
+	(353, 12, 'Temperatura', 10, '2022-05-18 13:00:00'),
+	(354, 12, 'Temperatura', 17, '2022-05-18 14:00:00'),
+	(355, 13, 'Salinidad', 7, '2022-05-18 19:00:00'),
+	(356, 13, 'Humedad', 35, '2022-05-18 14:00:00'),
+	(357, 13, 'Luz', 45, '2022-05-18 18:00:00'),
+	(358, 13, 'Luz', 23, '2022-05-18 17:00:00'),
+	(359, 13, 'Luz', 46, '2022-05-18 16:00:00'),
+	(360, 13, 'Luz', 75, '2022-05-18 15:00:00'),
+	(361, 13, 'Luz', 0, '2022-05-18 14:00:00'),
+	(362, 13, 'Luz', 10, '2022-05-18 13:00:00'),
+	(363, 13, 'Luz', 25, '2022-05-18 12:00:00'),
+	(364, 13, 'Salinidad', 23, '2022-05-18 17:00:00'),
+	(365, 13, 'Salinidad', 45, '2022-05-18 16:00:00'),
+	(366, 13, 'Salinidad', 98, '2022-05-18 15:00:00'),
+	(367, 13, 'Salinidad', 87, '2022-05-18 14:00:00'),
+	(368, 13, 'Salinidad', 67, '2022-05-18 13:00:00'),
+	(369, 13, 'Salinidad', 25, '2022-05-18 12:00:00'),
+	(370, 13, 'Humedad', 50, '2022-05-18 13:00:00'),
+	(371, 13, 'Humedad', 20, '2022-05-18 12:00:00'),
+	(372, 13, 'Temperatura', 35, '2022-05-18 12:00:00'),
+	(373, 13, 'Humedad', 60, '2022-05-18 19:00:00'),
+	(374, 13, 'Luz', 67, '2022-05-18 19:00:00'),
+	(375, 13, 'Salinidad', 12, '2022-05-18 18:00:00'),
+	(376, 13, 'Temperatura', 35, '2022-05-18 19:00:00'),
+	(377, 13, 'Temperatura', 45, '2022-05-18 18:00:00'),
+	(378, 13, 'Temperatura', 25, '2022-05-18 17:00:00'),
+	(379, 13, 'Temperatura', 32, '2022-05-18 16:00:00'),
+	(380, 13, 'Temperatura', 16, '2022-05-18 15:00:00'),
+	(381, 13, 'Humedad', 60, '2022-05-18 15:00:00'),
+	(382, 13, 'Humedad', 30, '2022-05-18 16:00:00'),
+	(383, 13, 'Humedad', 25, '2022-05-18 17:00:00'),
+	(384, 13, 'Humedad', 10, '2022-05-18 18:00:00'),
+	(385, 13, 'Temperatura', 10, '2022-05-18 13:00:00'),
+	(386, 13, 'Temperatura', 17, '2022-05-18 14:00:00');
 /*!40000 ALTER TABLE `mediciones_sonda` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gti_equipo7.parcelas
-DROP TABLE IF EXISTS `parcelas`;
 CREATE TABLE IF NOT EXISTS `parcelas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(60) NOT NULL,
@@ -305,7 +431,6 @@ INSERT INTO `parcelas` (`id`, `nombre`, `color`) VALUES
 /*!40000 ALTER TABLE `parcelas` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gti_equipo7.posicion_sonda
-DROP TABLE IF EXISTS `posicion_sonda`;
 CREATE TABLE IF NOT EXISTS `posicion_sonda` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `lat` decimal(10,7) NOT NULL,
@@ -314,9 +439,9 @@ CREATE TABLE IF NOT EXISTS `posicion_sonda` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `fk_vertice_sonda` (`sonda`) USING BTREE,
   CONSTRAINT `fk_vertice_sonda` FOREIGN KEY (`sonda`) REFERENCES `sondas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla gti_equipo7.posicion_sonda: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla gti_equipo7.posicion_sonda: ~12 rows (aproximadamente)
 DELETE FROM `posicion_sonda`;
 /*!40000 ALTER TABLE `posicion_sonda` DISABLE KEYS */;
 INSERT INTO `posicion_sonda` (`id`, `lat`, `lng`, `sonda`) VALUES
@@ -327,11 +452,14 @@ INSERT INTO `posicion_sonda` (`id`, `lat`, `lng`, `sonda`) VALUES
 	(18, 38.9924270, -0.1713474, 6),
 	(19, 38.9927512, -0.1694416, 7),
 	(20, 38.9915003, -0.1684759, 8),
-	(21, 38.9910870, -0.1709218, 9);
+	(21, 38.9910870, -0.1709218, 9),
+	(23, 38.9981639, -0.1720151, 10),
+	(24, 38.9979802, -0.1715208, 11),
+	(25, 38.9965934, -0.1721850, 12),
+	(26, 38.9969109, -0.1729598, 13);
 /*!40000 ALTER TABLE `posicion_sonda` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gti_equipo7.sondas
-DROP TABLE IF EXISTS `sondas`;
 CREATE TABLE IF NOT EXISTS `sondas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` int(11) NOT NULL,
@@ -341,9 +469,9 @@ CREATE TABLE IF NOT EXISTS `sondas` (
   KEY `FK2_sonda_usuario` (`usuario`),
   CONSTRAINT `FK1_sonda_parcela` FOREIGN KEY (`parcela`) REFERENCES `parcelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK2_sonda_usuario` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Volcando datos para la tabla gti_equipo7.sondas: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla gti_equipo7.sondas: ~7 rows (aproximadamente)
 DELETE FROM `sondas`;
 /*!40000 ALTER TABLE `sondas` DISABLE KEYS */;
 INSERT INTO `sondas` (`id`, `usuario`, `parcela`) VALUES
@@ -354,11 +482,14 @@ INSERT INTO `sondas` (`id`, `usuario`, `parcela`) VALUES
 	(6, 2, 3),
 	(7, 2, 3),
 	(8, 2, 3),
-	(9, 2, 3);
+	(9, 2, 3),
+	(10, 2, 1),
+	(11, 2, 1),
+	(12, 2, 1),
+	(13, 2, 1);
 /*!40000 ALTER TABLE `sondas` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gti_equipo7.usuarios
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(60) NOT NULL,
@@ -368,19 +499,19 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `rol` enum('admin','normal') NOT NULL,
   `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla gti_equipo7.usuarios: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla gti_equipo7.usuarios: ~3 rows (aproximadamente)
 DELETE FROM `usuarios`;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` (`id`, `email`, `nombre`, `empresa`, `password`, `rol`, `fecha_creacion`) VALUES
 	(1, 'propietario1@gmail.com', 'Zaida Pastor Gonzalez', 'Frutacsa', '1234', 'normal', '2021-05-19 17:00:00'),
 	(2, 'propietario2@gmail.com', 'Arnau Soler Tomás', 'CampoCaliente', '1234', 'normal', '2020-04-19 16:00:00'),
-	(3, 'admin@gmail.com', 'Pepe Gascó Bule', 'Administración', 'admin', 'admin', '2019-03-19 15:00:00');
+	(3, 'admin@gmail.com', 'Pepe Gascó Bule', 'Administración', 'admin', 'admin', '2019-03-19 15:00:00'),
+	(24, 'pruebaEditada@prueba.com', 'PruebaEditada ApellidoEditado', 'PruebaEditada', '$2y$10$2MUcgCSylG9qc93UOq6bKeOjT820CUyIffLiwYrCLR8L2pNr1oRNS', 'normal', '2022-06-11 20:42:31');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gti_equipo7.usuarios_parcelas
-DROP TABLE IF EXISTS `usuarios_parcelas`;
 CREATE TABLE IF NOT EXISTS `usuarios_parcelas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` int(11) NOT NULL,
@@ -390,20 +521,19 @@ CREATE TABLE IF NOT EXISTS `usuarios_parcelas` (
   KEY `fk_usuario_parcela_parcela` (`parcela`),
   CONSTRAINT `fk_usuario_parcela_parcela` FOREIGN KEY (`parcela`) REFERENCES `parcelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_usuario_parcela_usuario` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla gti_equipo7.usuarios_parcelas: ~4 rows (aproximadamente)
 DELETE FROM `usuarios_parcelas`;
 /*!40000 ALTER TABLE `usuarios_parcelas` DISABLE KEYS */;
 INSERT INTO `usuarios_parcelas` (`id`, `usuario`, `parcela`) VALUES
-	(1, 1, 1),
-	(2, 1, 2),
 	(3, 2, 1),
-	(4, 2, 3);
+	(4, 2, 3),
+	(5, 1, 2),
+	(6, 1, 1);
 /*!40000 ALTER TABLE `usuarios_parcelas` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gti_equipo7.vertices
-DROP TABLE IF EXISTS `vertices`;
 CREATE TABLE IF NOT EXISTS `vertices` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `lat` decimal(10,7) NOT NULL,
@@ -434,7 +564,6 @@ INSERT INTO `vertices` (`id`, `lat`, `lng`, `parcela`) VALUES
 /*!40000 ALTER TABLE `vertices` ENABLE KEYS */;
 
 -- Volcando estructura para vista gti_equipo7.vista_parcelas_con_vertices
-DROP VIEW IF EXISTS `vista_parcelas_con_vertices`;
 -- Creando tabla temporal para superar errores de dependencia de VIEW
 CREATE TABLE `vista_parcelas_con_vertices` (
 	`id` INT(11) NOT NULL,
@@ -445,7 +574,6 @@ CREATE TABLE `vista_parcelas_con_vertices` (
 ) ENGINE=MyISAM;
 
 -- Volcando estructura para vista gti_equipo7.vista_propiedad_parcelas
-DROP VIEW IF EXISTS `vista_propiedad_parcelas`;
 -- Creando tabla temporal para superar errores de dependencia de VIEW
 CREATE TABLE `vista_propiedad_parcelas` (
 	`usuario` INT(11) NOT NULL,
@@ -456,7 +584,6 @@ CREATE TABLE `vista_propiedad_parcelas` (
 ) ENGINE=MyISAM;
 
 -- Volcando estructura para vista gti_equipo7.vista_propiedad_sondas
-DROP VIEW IF EXISTS `vista_propiedad_sondas`;
 -- Creando tabla temporal para superar errores de dependencia de VIEW
 CREATE TABLE `vista_propiedad_sondas` (
 	`id_sonda` INT(11) NOT NULL,
@@ -467,19 +594,16 @@ CREATE TABLE `vista_propiedad_sondas` (
 ) ENGINE=MyISAM;
 
 -- Volcando estructura para vista gti_equipo7.vista_parcelas_con_vertices
-DROP VIEW IF EXISTS `vista_parcelas_con_vertices`;
 -- Eliminando tabla temporal y crear estructura final de VIEW
 DROP TABLE IF EXISTS `vista_parcelas_con_vertices`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vista_parcelas_con_vertices` AS select `parcelas`.`id` AS `id`,`parcelas`.`nombre` AS `nombre`,`parcelas`.`color` AS `color`,`vertices`.`lat` AS `lat`,`vertices`.`lng` AS `lng` from (`parcelas` join `vertices` on((`parcelas`.`id` = `vertices`.`parcela`))) ;
 
 -- Volcando estructura para vista gti_equipo7.vista_propiedad_parcelas
-DROP VIEW IF EXISTS `vista_propiedad_parcelas`;
 -- Eliminando tabla temporal y crear estructura final de VIEW
 DROP TABLE IF EXISTS `vista_propiedad_parcelas`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vista_propiedad_parcelas` AS select `usuarios_parcelas`.`usuario` AS `usuario`,`usuarios_parcelas`.`parcela` AS `parcela`,`parcelas`.`nombre` AS `nombre_parcela`,`parcelas`.`color` AS `color`,`usuarios`.`nombre` AS `nombre_usuario` from ((`usuarios_parcelas` join `parcelas` on((`parcelas`.`id` = `usuarios_parcelas`.`parcela`))) join `usuarios` on((`usuarios`.`id` = `usuarios_parcelas`.`usuario`))) ;
 
 -- Volcando estructura para vista gti_equipo7.vista_propiedad_sondas
-DROP VIEW IF EXISTS `vista_propiedad_sondas`;
 -- Eliminando tabla temporal y crear estructura final de VIEW
 DROP TABLE IF EXISTS `vista_propiedad_sondas`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vista_propiedad_sondas` AS SELECT `sondas`.`id` AS `id_sonda`,`sondas`.`usuario` AS `usuario`,`sondas`.`parcela` AS `parcela`,`posicion_sonda`.`lat` AS `latitud`,`posicion_sonda`.`lng` AS `longitud` from (`sondas` join `posicion_sonda` on((`sondas`.`id` = `posicion_sonda`.`sonda`))) ;

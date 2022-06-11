@@ -23,10 +23,12 @@
         </div>
     </header>
     <!-- Fin header -->
-
+    <a class="atras" href="parcelas.html?usuario=<?php echo $_GET['userID'] ?>"><img src="../assets/atras.svg"></a>
     <div class="chart-container">
         <canvas id="temperatura"></canvas>
-        <canvas id="conjunto"></canvas>
+        <canvas id="salinidad"></canvas>
+        <canvas id="luz"></canvas>
+        <canvas id="humedad"></canvas>
     </div>
 
     <script src="./js/canvas.js"></script>

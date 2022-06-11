@@ -20,6 +20,31 @@ async function cargarDatos() {
         borderColor: 'rgb(255,110,86)', //Color de linea
     }]; //array de datos
 
+    let datasets_humedad = [{
+        label: 'Sensor de Humedad (%)',
+        data: [],
+        //fill: true, //Relleno==true
+        backgroundColor: 'rgba(39, 76, 245, 0.8)', //Color de fondo
+        borderColor: 'rgba(39, 76, 245, 0.8)', //Color de linea
+    }]; //array de datos
+
+    let datasets_salinidad = [{
+        label: 'Sensor de Salinidad (%)',
+        data: [],
+        //fill: true, //Relleno==true
+        backgroundColor: 'rgba(122, 66, 27, 0.94) ', //Color de fondo
+        borderColor: 'rgba(122, 66, 27, 0.94)', //Color de linea
+    }]; //array de datos
+
+    let datasets_luz = [{
+        label: 'Sensor de Luz (%)',
+        data: [],
+        //fill: true, //Relleno==true
+        backgroundColor: 'rgba(245, 178, 39, 0.8)', //Color de fondo
+        borderColor: 'rgba(245, 178, 39, 0.8)', //Color de linea
+    }]; //array de datos
+
+    /*
     datasets_conjunto = [{
         label: 'Sensor de Salinidad (%)',
         data: [],
@@ -39,7 +64,7 @@ async function cargarDatos() {
         backgroundColor: 'rgba(39, 76, 245, 0.8)', //Color de fondo
         borderColor: 'rgba(39, 76, 245, 0.8)', //Color de linea
     }];
-
+*/
     mediciones.forEach(function(sensor) {
         let fecha = sensor.hora;
         fecha = fecha.slice(11, -3);
@@ -63,16 +88,21 @@ async function cargarDatos() {
     })
 
     datasets_temperatura[0].data = valor_temperatura;
-
-    datasets_conjunto[0].data = valor_salinidad;
-    datasets_conjunto[1].data = valor_luz;
-    datasets_conjunto[2].data = valor_humedad;
-
-    datos_conjuntos.labels = labels;
-    datos_conjuntos.datasets = datasets_conjunto;
+    datasets_humedad[0].data = valor_humedad;
+    datasets_salinidad[0].data = valor_salinidad;
+    datasets_luz[0].data = valor_temperatura;
 
     datos_temperatura.labels = labels;
     datos_temperatura.datasets = datasets_temperatura;
+
+    datos_humedad.labels = labels;
+    datos_humedad.datasets = datasets_humedad;
+
+    datos_salinidad.labels = labels;
+    datos_salinidad.datasets = datasets_salinidad;
+
+    datos_luz.labels = labels;
+    datos_luz.datasets = datasets_luz;
 
     crearGrafica();
 }
@@ -82,8 +112,21 @@ let datos_temperatura = {
     labels: [],
     datasets: []
 };
-//datos de la gráfica 
-let datos_conjuntos = {
+//datos de la gráfica de temperatura
+
+let datos_humedad = {
+    labels: [],
+    datasets: []
+};
+//datos de la gráfica de temperatura
+
+let datos_salinidad = {
+    labels: [],
+    datasets: []
+};
+
+//datos de la gráfica de temperatura
+let datos_luz = {
     labels: [],
     datasets: []
 };
@@ -114,7 +157,9 @@ const config = {
 };
 
 let temperatura = document.getElementById('temperatura');
-let conjunto = document.getElementById('conjunto');
+let humedad = document.getElementById('humedad');
+let salinidad = document.getElementById('salinidad');
+let luz = document.getElementById('luz');
 
 cargarDatos();
 
@@ -125,9 +170,22 @@ function crearGrafica() {
         options: config
     });
 
-    let grafica_conjunta = new Chart(conjunto, {
+    let grafica_humedad = new Chart(humedad, {
         type: 'line',
-        data: datos_conjuntos,
+        data: datos_humedad,
         options: config
     });
+
+    let grafica_salinidad = new Chart(salinidad, {
+        type: 'line',
+        data: datos_salinidad,
+        options: config
+    });
+
+    let grafica_luz = new Chart(luz, {
+        type: 'line',
+        data: datos_luz,
+        options: config
+    });
+
 }
