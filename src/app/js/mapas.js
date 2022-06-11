@@ -137,6 +137,9 @@ async function crearMarcadores(userID, parcelaID) {
     let consulta = await fetch("http://localhost/src/api/sonda.php/getMarcadores?user=" + userID + "&parcela=" + parcelaID);
     sondas = await consulta.json();
     count = 0;
+    let fechas = new Map();
+    valoresFinales = new Map();
+
     sondas.forEach(sonda => {
         mark = new google.maps.Marker({
             position: {
@@ -144,7 +147,8 @@ async function crearMarcadores(userID, parcelaID) {
                 lng: parseFloat(sonda.longitud)
             },
             draggable: false,
-            id: sonda.id_sonda
+            id: sonda.id_sonda,
+            title: "Sonda numero " + sonda.id_sonda,
         });
         posiciones["sonda" + count] = mark;
         count++;
@@ -153,8 +157,75 @@ async function crearMarcadores(userID, parcelaID) {
         if (Object.hasOwnProperty.call(posiciones, key)) {
             const mark = posiciones[key];
             mark.setMap(map);
+
+            let peticion = await fetch('http://localhost/src/api/sonda.php/getMediciones?idSonda=' + mark.id);
+            let mediciones = await peticion.json();
+            mediciones.forEach(function(sensor) {
+                let fecha = sensor.hora;
+                fechas.set(sensor.sensor, fecha);
+            });
+
+            mediciones.forEach(function(sensor) {
+                switch (sensor.sensor) {
+                    case "Temperatura":
+                        if (sensor.hora == fechas.get("Temperatura")) {
+                            valoresFinales.set("Temperatura", sensor.medicion)
+                        }
+                        break;
+                    case "Salinidad":
+                        if (sensor.hora == fechas.get("Salinidad")) {
+                            valoresFinales.set("Salinidad", sensor.medicion)
+                        }
+                        break;
+                    case "Luz":
+                        if (sensor.hora == fechas.get("Luz")) {
+                            valoresFinales.set("Luz", sensor.medicion)
+                        }
+                        break;
+                    case "Humedad":
+                        if (sensor.hora == fechas.get("Humedad")) {
+                            valoresFinales.set("Humedad", sensor.medicion)
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+            });
+
+            const contentString =
+                '<div id="content">' +
+                '<div id="siteNotice">' +
+                '<h1 id="firstHeading" class="firstHeading">Sonda numero ' + mark.id + '</h1>' +
+                "</div>" +
+                '<div id="bodyContent">' +
+                '<h2>Mediciones de la última hora </h2>' +
+                '<p><b>Temperatura: </b>' + valoresFinales.get("Temperatura") + "ºC" + ' </p>' +
+                '<p><b>Humedad: </b>' + valoresFinales.get("Humedad") + "%" + '</p>' +
+                '<p><b>Salinidad: </b>' + valoresFinales.get("Salinidad") + "%" + ' </p>' +
+                '<p><b>Cantidad de luz: </b>' + valoresFinales.get("Luz") + "%" + ' </p>' +
+                '<h3>Pulse el marcador para mas información</h3>' +
+                "</div>" +
+                "</div>";
+
+            const infowindow = new google.maps.InfoWindow({
+                content: contentString,
+            });
+
+            google.maps.event.addListener(mark, 'mouseover', function(event) {
+                infowindow.open({
+                    anchor: mark,
+                    map,
+                    shouldFocus: false,
+                });
+            });
+
+            google.maps.event.addListener(mark, 'mouseout', function(event) {
+                infowindow.close({});
+            });
+
             google.maps.event.addListener(mark, 'click', function(event) {
-                window.location.href = "datos_sondas.html?idSonda=" + mark.id;
+                window.location.href = "datos_sondas.php?idSonda=" + mark.id + "&userID=" + userID;
             });
         }
     }

@@ -84,6 +84,9 @@ if (empty($busqueda)) {
                             </div>
                         </div>
                         <div class="area_der">
+                            <div class="area_editar">
+                                <button class="boton_editar" onclick="edit_user('<?php echo $user->email ?>')"><img src="../assets/edit_user_icon.svg" alt="icono de borrar" class="borrar"></button>
+                            </div>
                             <div class="area_borrar">
                                 <button class="boton_borrar" onclick="delete_user('<?php echo $user->nombre ?>', '<?php echo $user->email ?>')"><img src="../assets/icono_borrar.svg" alt="icono de borrar" class="borrar"></button>
                             </div>
@@ -191,6 +194,13 @@ if (empty($busqueda)) {
                         location.reload();
                     }
                 }
+            }
+
+            async function edit_user(email) {
+                let consulta = await fetch("http://localhost/src/api/user.php/get?email=" + email);
+                user = await consulta.json();
+                console.log(user[0]);
+                window.location = './edit.php?email=' + email + '&empresa=' + user[0].empresa + '&rol=' + user[0].rol + '&nombre=' + user[0].nombre;
             }
         </script>
     </div>
